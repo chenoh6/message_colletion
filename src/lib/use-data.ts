@@ -7,6 +7,7 @@ interface UseEntriesOptions {
   limit?: number;
   autoFetch?: boolean;
   pollInterval?: number; // ms, 0 = no polling
+  sortBy?: "time" | "score";
 }
 
 interface UseEntriesResult {
@@ -18,7 +19,7 @@ interface UseEntriesResult {
 }
 
 export function useEntries(options: UseEntriesOptions = {}): UseEntriesResult {
-  const { source, category, limit = 50, autoFetch = true, pollInterval = 30000 } = options;
+  const { source, category, limit = 50, autoFetch = true, pollInterval = 30000, sortBy = "time" } = options;
   const [entries, setEntries] = useState<Entry[]>([]);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(autoFetch);
@@ -32,6 +33,7 @@ export function useEntries(options: UseEntriesOptions = {}): UseEntriesResult {
       if (source) params.set("source", source);
       if (category) params.set("category", category);
       if (limit) params.set("limit", String(limit));
+      if (sortBy === "score") params.set("sort_by", "score");
       const res = await fetch(`/api/entries?${params}`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
@@ -42,7 +44,7 @@ export function useEntries(options: UseEntriesOptions = {}): UseEntriesResult {
     } finally {
       setLoading(false);
     }
-  }, [source, category, limit]);
+  }, [source, category, limit, sortBy]);
 
   useEffect(() => {
     if (autoFetch) refresh();

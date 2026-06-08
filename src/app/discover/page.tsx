@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { TOPICS, FEED_ENTRIES } from "@/lib/data";
 import { CRYPTO_CATEGORIES } from "@/lib/crypto-data";
@@ -14,10 +15,29 @@ const HOT_SOURCES = [
 ];
 
 export default function DiscoverPage() {
+  const [rescoring, setRescoring] = useState(false);
+  const [rescoreMsg, setRescoreMsg] = useState("");
+
+  const handleRescore = async () => {
+    setRescoring(true);
+    setRescoreMsg("评分计算中...");
+    try {
+      const res = await fetch("/api/rescore", { method: "POST" });
+      const data = await res.json();
+      setRescoreMsg(data.message || "✅ 完成");
+      setTimeout(() => setRescoreMsg(""), 3000);
+    } catch {
+      setRescoreMsg("❌ 失败");
+      setTimeout(() => setRescoreMsg(""), 3000);
+    } finally {
+      setRescoring(false);
+    }
+  };
+
   return (
     <div className="flex-1 overflow-y-auto scrollbar-thin">
       {/* Header */}
-      <header className="h-16 flex items-center px-8 border-b shrink-0"
+      <header className="h-16 flex items-center px-8 border-b shrink-0 gap-3"
         style={{ borderColor: "rgba(255,255,255,0.05)", background: "rgba(8,12,26,0.4)", backdropFilter: "blur(16px)" }}
       >
         <h1 className="text-lg font-bold">🔍 发现</h1>
@@ -27,6 +47,14 @@ export default function DiscoverPage() {
           <span className="text-sm">🔍</span>
           <span className="text-sm">搜索话题、来源...</span>
         </div>
+        <button
+          onClick={handleRescore}
+          disabled={rescoring}
+          className="text-xs px-3 py-1.5 rounded-lg font-medium transition-all cursor-pointer disabled:opacity-40"
+          style={{ background: "rgba(124,92,252,0.1)", color: "#a78bfa", border: "1px solid rgba(124,92,252,0.15)" }}
+        >
+          {rescoring ? "⏳ 评分中..." : rescoreMsg || "📊 重新评分"}
+        </button>
       </header>
 
       <div className="px-8 py-6 max-w-[1200px] mx-auto w-full">

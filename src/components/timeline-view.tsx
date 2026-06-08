@@ -58,25 +58,45 @@ function TimelineEvent({ entry, index, onOpen, onDecode, decoding }: {
   const hasAi = !!entry.aiSummary;
   const sourceColor = getSourceColor(entry.source);
 
+  // 评分标记：≥80 热门，≥60 值得关注
+  const score = entry.score ?? 0;
+  const isHot = score >= 80;
+  const isNotable = score >= 60;
+  const scoreColor = isHot ? "#f59e0b" : isNotable ? "#a78bfa" : "transparent";
+
   return (
     <div className="flex gap-4 animate-in" style={{ animationDelay: `${0.03 * index}s` }}>
-      {/* 时间轴左侧 */}
+      {/* 时间轴左侧 — 评分高亮条 */}
       <div className="flex flex-col items-center flex-shrink-0" style={{ width: 20 }}>
         <div
-          className="w-[10px] h-[10px] rounded-full mt-1.5 z-10"
-          style={{ background: sourceColor, border: `2px solid ${hasAi ? sourceColor + "66" : "rgba(255,255,255,0.15)"}` }}
+          className="w-[10px] h-[10px] rounded-full mt-1.5 z-10 transition-all"
+          style={{
+            background: isHot ? scoreColor : sourceColor,
+            border: `2px solid ${isHot ? scoreColor + "99" : hasAi ? sourceColor + "66" : "rgba(255,255,255,0.15)"}`,
+            boxShadow: isHot ? `0 0 8px ${scoreColor}66` : "none",
+          }}
         />
+        {isHot && (
+          <span className="text-[8px] mt-0.5 font-bold" style={{ color: scoreColor }}>🔥</span>
+        )}
         <div className="w-px flex-1 min-h-[24px]" style={{ background: "rgba(255,255,255,0.06)" }} />
       </div>
 
       {/* 内容卡片 */}
       <div className="flex-1 min-w-0 pb-4 cursor-pointer" onClick={() => onOpen(entry)}>
-        <div className="glass-sm rounded-xl px-4 py-3 transition-all hover:translate-y-[-1px]">
+        <div
+          className="glass-sm rounded-xl px-4 py-3 transition-all hover:translate-y-[-1px]"
+          style={{
+            borderLeft: isHot ? `3px solid ${scoreColor}` : isNotable ? `3px solid ${scoreColor}66` : "3px solid transparent",
+          }}
+        >
           <div className="flex items-center gap-1.5 text-[10px] mb-0.5">
             <span style={{ color: getSourceColor(entry.source) }}>{entry.sourceIcon} {entry.source}</span>
             <span className="text-tertiary">·</span>
             <span className="text-tertiary">{entry.time}</span>
             {hasAi && <span className="text-[8px] px-1 py-[1px] rounded-sm" style={{ background: "rgba(124,92,252,0.12)", color: "#a78bfa" }}>已解析</span>}
+            {isHot && <span className="text-[8px] px-1 py-[1px] rounded-sm" style={{ background: "rgba(245,158,11,0.12)", color: "#f59e0b" }}>🔥 热门</span>}
+            {isNotable && !isHot && <span className="text-[8px] px-1 py-[1px] rounded-sm" style={{ background: "rgba(124,92,252,0.08)", color: "#a78bfa" }}>值得关注</span>}
           </div>
           <h4 className="text-sm font-semibold leading-snug line-clamp-1">{entry.titleCn || entry.title}</h4>
           {(entry.aiSummary || entry.summary) && (

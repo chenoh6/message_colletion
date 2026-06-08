@@ -9,6 +9,7 @@ export async function GET(request: Request) {
   const category = searchParams.get("category");
   const limit = parseInt(searchParams.get("limit") || "50");
   const offset = parseInt(searchParams.get("offset") || "0");
+  const sortBy = searchParams.get("sort_by") === "score" ? "score" : "time";
 
   // Single entry
   if (id) {
@@ -20,7 +21,7 @@ export async function GET(request: Request) {
   }
 
   // List entries
-  const entries = await getEntries({ source: source || undefined, category: category || undefined, limit, offset });
+  const entries = await getEntries({ source: source || undefined, category: category || undefined, limit, offset, sortBy });
   const store = await getStore();
 
   return NextResponse.json({
