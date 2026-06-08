@@ -31,6 +31,7 @@ function SourceCard({ sourceId, sourceName, sourceIcon, entries, onOpen }: {
       style={{
         background: "rgba(255,255,255,0.03)",
         border: "1px solid rgba(255,255,255,0.06)",
+        borderTop: `3px solid ${color}44`,
       }}
     >
       {/* Card Header */}

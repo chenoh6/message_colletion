@@ -68,7 +68,7 @@ function TimelineEvent({ entry, index, onOpen, onDecode, decoding }: {
         <div
           className="glass-sm rounded-xl px-4 py-3 transition-all hover:translate-y-[-1px]"
           style={{
-            borderLeft: isHot ? `3px solid ${scoreColor}` : isNotable ? `3px solid ${scoreColor}66` : "3px solid transparent",
+            borderLeft: `3px solid ${isHot ? scoreColor : sourceColor}44`,
           }}
         >
           <div className="flex items-center gap-1.5 text-[10px] mb-0.5">
