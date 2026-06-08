@@ -61,11 +61,16 @@ export function MarketDashboard({ market }: { market: MarketType }) {
 
   if (loading || !data) return <div className="glass-card"><div className="h-[120px] glass-skeleton rounded" /></div>;
 
+  // 防止 API 异常导致页面崩溃
+  if (!data.crypto || !data.indicators) {
+    return <div className="glass-card p-4"><p className="text-xs text-dim">市场数据加载中...</p></div>;
+  }
+
   // ===== 币圈 =====
   if (market === "crypto") {
     const c = data.crypto;
     const i = data.indicators;
-    const fg = c.fearGreed;
+    const fg = c.fearGreed ?? 50;
     const fgColor = fg <= 25 ? "#f87171" : fg <= 45 ? "#fbbf24" : fg <= 60 ? "#2dd4bf" : "#22c55e";
     const fgLabel = fg <= 25 ? "极度恐惧" : fg <= 45 ? "恐惧" : fg <= 60 ? "中性" : fg <= 75 ? "贪婪" : "极度贪婪";
     return (
