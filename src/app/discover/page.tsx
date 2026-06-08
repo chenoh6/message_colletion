@@ -2,8 +2,6 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-import { FEED_ENTRIES } from "@/lib/data";
-import { CRYPTO_CATEGORIES } from "@/lib/crypto-data";
 
 /* ===== 类型定义 ===== */
 interface SourceItem {
@@ -38,7 +36,7 @@ const TIER_LABELS: Record<number, { label: string; color: string }> = {
   3: { label: "长尾", color: "rgba(255,255,255,0.3)" },
 };
 
-/* ===== 分类汇总卡片 ===== */
+/* ===== 分类：紧凑卡片网格 ===== */
 function CategoryCard({
   cat,
   sources,
@@ -85,55 +83,47 @@ function CategoryCard({
           )}
         </div>
       </div>
-      <div className="flex flex-col gap-1.5">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
         {sources.map((source) => (
           <div key={source.id}
-            className="flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all"
+            className="flex items-center gap-2 px-3 py-2.5 rounded-xl transition-all cursor-pointer"
+            onClick={() => onToggle(source.id)}
             style={{
-              background: source.enabled ? "rgba(255,255,255,0.03)" : "rgba(255,255,255,0.01)",
-              opacity: source.enabled ? 1 : 0.45,
+              background: source.enabled ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.015)",
+              border: "1px solid",
+              borderColor: source.enabled ? "rgba(124,92,252,0.12)" : "rgba(255,255,255,0.04)",
+              opacity: source.enabled ? 1 : 0.5,
             }}
           >
             <span className="text-lg flex-shrink-0">{source.icon}</span>
             <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-1.5">
-                <span className="text-sm font-medium">{source.name}</span>
-                <span className="text-[9px] px-1 py-[1px] rounded-sm font-medium"
+              <div className="flex items-center gap-1">
+                <span className="text-xs font-medium truncate">{source.name}</span>
+              </div>
+              <div className="flex items-center gap-1 mt-0.5">
+                <span className="text-[9px] px-1 py-[0.5px] rounded-sm font-medium"
                   style={{ background: TIER_LABELS[source.tier].color + "18", color: TIER_LABELS[source.tier].color }}
                 >
                   {TIER_LABELS[source.tier].label}
                 </span>
+                <span className="text-[9px]" style={{ color: "rgba(255,255,255,0.2)" }}>
+                  {source.interval < 60 ? `${source.interval}min` : `${source.interval / 60}h`}
+                </span>
                 {source.lang === "en" && source.aiTranslate && (
-                  <span className="text-[9px] px-1 py-[1px] rounded-sm"
+                  <span className="text-[8px] px-1 py-[0.5px] rounded-sm"
                     style={{ background: "rgba(59,130,246,0.1)", color: "#60a5fa" }}
                   >
-                    AI 翻译
+                    译
                   </span>
                 )}
               </div>
-              {source.description && (
-                <p className="text-[11px] mt-0.5 truncate" style={{ color: "rgba(255,255,255,0.3)" }}>
-                  {source.description}
-                </p>
-              )}
             </div>
-            <div className="flex items-center gap-2 flex-shrink-0">
-              <span className="text-[10px]" style={{ color: "rgba(255,255,255,0.25)" }}>
-                {source.interval < 60 ? `${source.interval}min` : `${source.interval / 60}h`}
-              </span>
-              <button
-                onClick={() => onToggle(source.id)}
-                className="relative w-9 h-5 rounded-full transition-all cursor-pointer"
-                style={{
-                  background: source.enabled ? "linear-gradient(135deg, #7c5cfc, #a78bfa)" : "rgba(255,255,255,0.1)",
-                  border: "none",
-                }}
-              >
-                <span className="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-all"
-                  style={{ transform: source.enabled ? "translateX(16px)" : "translateX(0)" }}
-                />
-              </button>
-            </div>
+            <div className="flex-shrink-0 w-4 h-4 rounded-full transition-all"
+              style={{
+                background: source.enabled ? "#7c5cfc" : "rgba(255,255,255,0.08)",
+                border: source.enabled ? "3px solid #a78bfa" : "2px solid rgba(255,255,255,0.12)",
+              }}
+            />
           </div>
         ))}
       </div>
@@ -319,126 +309,24 @@ export default function DiscoverPage() {
           </div>
         )}
 
-        {/* 工具推荐 */}
-        <section className="mb-10">
-          <div className="flex items-center gap-3 mb-6">
+        {/* 工具推荐 — 紧凑 */}
+        <section className="mb-8">
+          <div className="flex items-center gap-3 mb-4">
             <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.04)" }} />
             <span className="text-xs font-semibold tracking-widest" style={{ color: "rgba(255,255,255,0.2)" }}>
-              🛠 内置工具
+              🛠 工具
             </span>
             <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.04)" }} />
           </div>
           <Link href="/tools"
-            className="glass rounded-xl p-4 flex items-center gap-4 cursor-pointer transition-all duration-300 hover:translate-y-[-2px]"
+            className="flex items-center gap-3 px-4 py-3 rounded-xl transition-all"
+            style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)" }}
           >
-            <span className="text-3xl">📡</span>
-            <div className="flex-1 min-w-0">
-              <div className="text-sm font-semibold">RSS Everything</div>
-              <div className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>
-                将任意没有 RSS 的网页转换为 RSS 订阅源，然后添加到本平台
-              </div>
-              <div className="flex items-center gap-2 mt-1.5">
-                <span className="text-[10px] px-1.5 py-0.5 rounded-sm" style={{ background: "rgba(124,92,252,0.1)", color: "#a78bfa" }}>
-                  🔗 粘贴网址
-                </span>
-                <span className="text-[10px] px-1.5 py-0.5 rounded-sm" style={{ background: "rgba(45,212,191,0.1)", color: "#2dd4bf" }}>
-                  📝 定义规则
-                </span>
-                <span className="text-[10px] px-1.5 py-0.5 rounded-sm" style={{ background: "rgba(251,191,36,0.1)", color: "#fbbf24" }}>
-                  📡 生成 RSS
-                </span>
-              </div>
-            </div>
-            <span className="text-xl" style={{ color: "rgba(255,255,255,0.2)" }}>→</span>
+            <span className="text-xl">📡</span>
+            <span className="text-xs font-medium">RSS Everything</span>
+            <span className="text-[10px]" style={{ color: "rgba(255,255,255,0.3)" }}>— 网页转 RSS</span>
+            <span className="ml-auto text-xs" style={{ color: "rgba(124,92,252,0.6)" }}>使用 →</span>
           </Link>
-        </section>
-
-        {/* 币圈生态 — 外部资源 */}
-        <div className="mb-10">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.04)" }} />
-            <span className="text-xs font-semibold tracking-widest" style={{ color: "rgba(255,255,255,0.2)" }}>
-              ₿ 币圈生态 — 外部资源
-            </span>
-            <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.04)" }} />
-          </div>
-          {CRYPTO_CATEGORIES.map((cat: any) => (
-            <div key={cat.title} className="mb-6">
-              <div className="flex items-center gap-2.5 mb-3">
-                <span className="text-lg">{cat.icon}</span>
-                <h3 className="text-sm font-bold">{cat.title}</h3>
-                <span className="text-[10px]" style={{ color: "rgba(255,255,255,0.3)" }}>{cat.items.length} 个</span>
-              </div>
-              <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none" }}>
-                {cat.items.map((source: any) => (
-                  <Link key={source.name}
-                    href={source.url || "#"}
-                    target={source.url ? "_blank" : undefined}
-                    rel={source.url ? "noopener noreferrer" : undefined}
-                    className="flex-shrink-0 glass rounded-xl p-3 flex items-center gap-3 transition-all hover:translate-y-[-2px]"
-                  >
-                    <span className="text-2xl">{source.icon}</span>
-                    <div className="min-w-0 max-w-[160px]">
-                      <div className="flex items-center gap-1">
-                        <span className="text-xs font-semibold whitespace-nowrap">{source.name}</span>
-                        {source.recommend && (
-                          <span className="text-[8px] px-1 py-0.5 rounded-full font-semibold whitespace-nowrap"
-                            style={{ background: "linear-gradient(135deg, rgba(124,92,252,0.25), rgba(45,212,191,0.2))", color: "#c4b5fd" }}
-                          >
-                            推荐
-                          </span>
-                        )}
-                      </div>
-                      <div className="text-[10px] mt-0.5 truncate" style={{ color: "rgba(255,255,255,0.35)" }}>{source.desc}</div>
-                      <div className="flex items-center gap-1 mt-0.5">
-                        <span className="text-[9px] px-1.5 py-[1px] rounded-sm font-medium"
-                          style={{
-                            background: source.type === "海外" ? "rgba(59,130,246,0.12)" :
-                              source.type === "中文" ? "rgba(239,68,68,0.12)" :
-                              source.type === "链上数据" ? "rgba(16,185,129,0.12)" :
-                              source.type === "Newsletter" ? "rgba(245,158,11,0.12)" :
-                              "rgba(168,85,247,0.12)",
-                            color: source.type === "海外" ? "#60a5fa" :
-                              source.type === "中文" ? "#f87171" :
-                              source.type === "链上数据" ? "#34d399" :
-                              source.type === "Newsletter" ? "#fbbf24" :
-                              "#c084fc",
-                          }}
-                        >
-                          {source.type}
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* 正在热议 */}
-        <section>
-          <h2 className="text-base font-semibold mb-4 flex items-center gap-2">🔥 正在热议</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
-            {FEED_ENTRIES.slice(0, 3).map((entry, i) => (
-              <Link key={entry.id} href={`/reading/${entry.id}`}
-                className="glass rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:translate-y-[-3px]"
-              >
-                <div className={`h-[100px] flex items-end justify-end p-4 bg-gradient-to-br ${entry.coverGradient}`}>
-                  <span className="text-4xl opacity-20">{entry.coverEmoji}</span>
-                </div>
-                <div className="p-4">
-                  <h3 className="text-sm font-semibold leading-snug mb-2">{entry.title}</h3>
-                  <div className="flex items-center gap-2 text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
-                    <span style={{ color: "#7c5cfc", fontWeight: 500 }}>{entry.source}</span>
-                    <span>·</span>
-                    <span>{entry.time}</span>
-                  </div>
-                  <p className="text-xs mt-2 line-clamp-2" style={{ color: "rgba(255,255,255,0.45)" }}>{entry.summary}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
         </section>
       </div>
     </div>

@@ -132,50 +132,6 @@
       "coverEmoji": "🔬",
       "score": 34
     },
-    "76d86f7f-ce98-4915-a803-292e9ec8c472": {
-      "id": "76d86f7f-ce98-4915-a803-292e9ec8c472",
-      "title": "B站宣布启动AI创造公开赛 打造中国版Build in Public",
-      "url": "https://www.qbitai.com/2026/06/430752.html",
-      "summary": "B站宣布启动AI创造公开赛 打造中国版Build in Public",
-      "contentText": "",
-      "source": "量子位",
-      "sourceId": "qbitai",
-      "sourceIcon": "🔬",
-      "time": "8 小时前",
-      "isoDate": "2026-06-05T07:38:08.000Z",
-      "category": "ai",
-      "tags": [],
-      "likes": 0,
-      "comments": 0,
-      "isRead": false,
-      "isSaved": false,
-      "readingTime": "1 分钟",
-      "coverGradient": "from-[#7c5cfc]/30 to-[#2dd4bf]/15",
-      "coverEmoji": "🔬",
-      "score": 34
-    },
-    "2a0ac6bf-5c3a-4869-a0dc-21d3d83f5b07": {
-      "id": "2a0ac6bf-5c3a-4869-a0dc-21d3d83f5b07",
-      "title": "100亿砸向人形，不如先让10万台机器狗走进家庭",
-      "url": "https://www.qbitai.com/2026/06/429968.html",
-      "summary": "所有通用技术，最后都要回到消费市场。",
-      "contentText": "所有通用技术，最后都要回到消费市场。",
-      "source": "量子位",
-      "sourceId": "qbitai",
-      "sourceIcon": "🔬",
-      "time": "9 小时前",
-      "isoDate": "2026-06-05T07:21:20.000Z",
-      "category": "ai",
-      "tags": [],
-      "likes": 0,
-      "comments": 0,
-      "isRead": false,
-      "isSaved": false,
-      "readingTime": "1 分钟",
-      "coverGradient": "from-[#7c5cfc]/30 to-[#2dd4bf]/15",
-      "coverEmoji": "🔬",
-      "score": 34
-    },
     "9e54fcb8-b395-482a-95df-dc777dd7c336": {
       "id": "9e54fcb8-b395-482a-95df-dc777dd7c336",
       "title": "The Download: AI hacking beyond Mythos, and chatbots’ impact on our brains",
@@ -1012,28 +968,6 @@
       "coverEmoji": "💬",
       "score": 32
     },
-    "f43a2661-d514-4051-895d-ace0c6dc8503": {
-      "id": "f43a2661-d514-4051-895d-ace0c6dc8503",
-      "title": "Changing how we develop Ladybird",
-      "url": "https://ladybird.org/posts/changing-how-we-develop-ladybird/",
-      "summary": "Comments",
-      "contentText": "Comments",
-      "source": "Hacker News",
-      "sourceId": "hacker-news",
-      "sourceIcon": "💬",
-      "time": "9 小时前",
-      "isoDate": "2026-06-05T07:26:33.000Z",
-      "category": "tech",
-      "tags": [],
-      "likes": 0,
-      "comments": 0,
-      "isRead": false,
-      "isSaved": false,
-      "readingTime": "1 分钟",
-      "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
-      "coverEmoji": "💬",
-      "score": 32
-    },
     "b8e368ef-3315-4e2b-bc4d-1033d01e0ec7": {
       "id": "b8e368ef-3315-4e2b-bc4d-1033d01e0ec7",
       "title": "Leak Reveals Microsoft Wants Its AI to Be 'Addictive'",
@@ -1067,50 +1001,6 @@
       "sourceIcon": "💬",
       "time": "4 小时前",
       "isoDate": "2026-06-05T12:00:18.000Z",
-      "category": "tech",
-      "tags": [],
-      "likes": 0,
-      "comments": 0,
-      "isRead": false,
-      "isSaved": false,
-      "readingTime": "1 分钟",
-      "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
-      "coverEmoji": "💬",
-      "score": 32
-    },
-    "82fbe9f6-4ed0-4d62-b889-8e21dc11d75a": {
-      "id": "82fbe9f6-4ed0-4d62-b889-8e21dc11d75a",
-      "title": "ESP32 Bit Pirate, a Hardware Hacking Tool with WebCLI That Speaks Every Protocol",
-      "url": "https://github.com/geo-tp/ESP32-Bit-Pirate",
-      "summary": "Comments",
-      "contentText": "Comments",
-      "source": "Hacker News",
-      "sourceId": "hacker-news",
-      "sourceIcon": "💬",
-      "time": "8 小时前",
-      "isoDate": "2026-06-05T07:40:04.000Z",
-      "category": "tech",
-      "tags": [],
-      "likes": 0,
-      "comments": 0,
-      "isRead": false,
-      "isSaved": false,
-      "readingTime": "1 分钟",
-      "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
-      "coverEmoji": "💬",
-      "score": 32
-    },
-    "de0f9a40-c11a-4174-9c34-61470203e32a": {
-      "id": "de0f9a40-c11a-4174-9c34-61470203e32a",
-      "title": "Lee Kuan Yew's Singapore Story (2023)",
-      "url": "https://www.historytoday.com/archive/feature/lee-kuan-yews-singapore-story",
-      "summary": "Comments",
-      "contentText": "Comments",
-      "source": "Hacker News",
-      "sourceId": "hacker-news",
-      "sourceIcon": "💬",
-      "time": "9 小时前",
-      "isoDate": "2026-06-05T07:23:44.000Z",
       "category": "tech",
       "tags": [],
       "likes": 0,
@@ -3729,35 +3619,6 @@
       "titleCn": "美国比特币和以太坊ETF结束创纪录的数十亿美元资金外流",
       "aiProcessedAt": "2026-06-06T01:38:01.342Z",
       "score": 38
-    },
-    "5141b9e9-ee0b-4734-9887-d2a498affbe9": {
-      "id": "5141b9e9-ee0b-4734-9887-d2a498affbe9",
-      "title": "Here's what could happen if bitcoin breaks below $60,000",
-      "url": "https://www.coindesk.com/markets/2026/06/05/here-s-what-could-happen-if-bitcoin-breaks-below-usd60-000",
-      "summary": "A confluence of factors makes $60,000 as key level to watch for in the near term, according to Deribit.",
-      "contentText": "A confluence of factors makes $60,000 as key level to watch for in the near term, according to Deribit.",
-      "source": "CoinDesk",
-      "sourceId": "coindesk",
-      "sourceIcon": "📰",
-      "time": "16 小时前",
-      "isoDate": "2026-06-05T07:52:25.000Z",
-      "category": "crypto",
-      "tags": [
-        "比特币",
-        "6万美元",
-        "关键价位"
-      ],
-      "likes": 0,
-      "comments": 0,
-      "isRead": false,
-      "isSaved": false,
-      "readingTime": "2 分钟",
-      "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
-      "coverEmoji": "📰",
-      "aiSummary": "Deribit指出，多重因素叠加使得6万美元成为近期关键观察价位。\n\n解码分析：\n🔍 事实：比特币当前在6万美元附近震荡，Deribit认为该价位是近期重要支撑/阻力位，受多重因素影响。\n💡 判断：6万美元是心理和技术双重关口，若跌破可能触发止损盘和恐慌性抛售，但若守住则可能形成反弹基础。需结合RSI、ETF资金流向等指标判断趋势强度。\n🧭 行动：观望为主，关注6万美元是否有效跌破。若跌破，可考虑轻仓做空或等待更低位置买入；若守住，可等待反弹信号。跟踪指标：比特币RSI、ETF净流入、非农数据。",
-      "titleCn": "如果比特币跌破6万美元，可能会发生什么",
-      "aiProcessedAt": "2026-06-06T01:38:01.206Z",
-      "score": 46
     },
     "cd45d2d8-b65b-4c47-a6fa-868019893a7a": {
       "id": "cd45d2d8-b65b-4c47-a6fa-868019893a7a",
@@ -6898,7 +6759,7 @@
       "readingTime": "1 分钟",
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📰",
-      "score": 49
+      "score": 55
     },
     "5a19c5fc-7522-4571-8931-ef438388edbc": {
       "id": "5a19c5fc-7522-4571-8931-ef438388edbc",
@@ -6920,7 +6781,7 @@
       "readingTime": "1 分钟",
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📰",
-      "score": 52
+      "score": 58
     },
     "a53486d7-8776-4e72-b423-d9a2fa7570f4": {
       "id": "a53486d7-8776-4e72-b423-d9a2fa7570f4",
@@ -8394,7 +8255,7 @@
       "readingTime": "1 分钟",
       "coverGradient": "from-[#2dd4bf]/20 to-[#7c5cfc]/15",
       "coverEmoji": "💹",
-      "score": 45
+      "score": 51
     },
     "8920d679-afe7-480f-b416-df3458ffc195": {
       "id": "8920d679-afe7-480f-b416-df3458ffc195",
@@ -10426,7 +10287,10 @@
       "readingTime": "1 分钟",
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📰",
-      "score": 71
+      "score": 71,
+      "aiSummary": "Meanwhile, Strive bought 32 bitcoin, the same number Strategy dumped last week.",
+      "titleCn": "Live updates: Bitcoin drops under $63,000 as Strategy adds $100 million BTC in latest purchase",
+      "aiProcessedAt": "2026-06-08T13:05:36.565Z"
     },
     "43bef09b-4dde-4be3-a5c5-2ca096206476": {
       "id": "43bef09b-4dde-4be3-a5c5-2ca096206476",
@@ -10440,7 +10304,11 @@
       "time": "22 分钟前",
       "isoDate": "2026-06-08T12:02:21.000Z",
       "category": "crypto",
-      "tags": [],
+      "tags": [
+        "比特币",
+        "市场指标",
+        "已实现价格"
+      ],
       "likes": 0,
       "comments": 0,
       "isRead": false,
@@ -10448,7 +10316,10 @@
       "readingTime": "1 分钟",
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📰",
-      "score": 74
+      "score": 74,
+      "aiSummary": "该指标显示，比特币市场价格在近期抛售后正接近其已实现公允价值，暗示最糟糕的下跌可能已经结束。\n\n解码分析：\n🔍 事实：比特币市场价格目前正接近其链上已实现价格（持有者的平均成本），表明市场接近盈亏平衡点，历史上该位置常出现价格支撑。\n💡 判断：接近已实现价格是弱势信号，但若该水平守住，则意味着底部区域形成。需结合资金费率、现货溢价等确认，若反弹乏力则可能继续下探。\n🧭 行动：关注该关口能否形成有效支撑，若放量反弹可考虑分批建仓，否则保持观望。跟踪指标：比特币现货溢价、交易所稳定币流入量。",
+      "titleCn": "一个关键的比特币市场指标显示，加密货币暴跌的最糟糕时期可能已经过去",
+      "aiProcessedAt": "2026-06-08T13:05:33.260Z"
     },
     "d84461ba-111b-408a-95cd-288ab3178ad5": {
       "id": "d84461ba-111b-408a-95cd-288ab3178ad5",
@@ -10690,7 +10561,7 @@
       "readingTime": "1 分钟",
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📰",
-      "score": 66
+      "score": 72
     },
     "ca538ed8-1e58-4ea8-a1e9-6bcbaabc714a": {
       "id": "ca538ed8-1e58-4ea8-a1e9-6bcbaabc714a",
@@ -10822,7 +10693,10 @@
       "readingTime": "1 分钟",
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📰",
-      "score": 67
+      "score": 67,
+      "aiSummary": "The company bought 126,971 ETH last week, worth roughly $214 million at current prices, despite chairman Tom Lee's earlier calls to slow purchases.",
+      "titleCn": "Bitmine bought the dip, making its biggest ether purchase in 2026 as prices tanked",
+      "aiProcessedAt": "2026-06-08T13:04:21.778Z"
     },
     "c9c69afd-9511-4544-9867-7db1eddf7fa9": {
       "id": "c9c69afd-9511-4544-9867-7db1eddf7fa9",
@@ -10967,8 +10841,13 @@
       "sourceIcon": "📡",
       "time": "6 分钟前",
       "isoDate": "2026-06-08T12:52:34.000Z",
-      "category": "tech",
-      "tags": [],
+      "category": "other",
+      "tags": [
+        "天娱数科",
+        "物理AI",
+        "概念炒作",
+        "股票异常波动"
+      ],
       "likes": 0,
       "comments": 0,
       "isRead": false,
@@ -10976,7 +10855,10 @@
       "readingTime": "1 分钟",
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📡",
-      "score": 63
+      "score": 63,
+      "aiSummary": "天娱数科因股价连续两天涨幅偏离值累计超20%发布澄清公告，明确表示公司目前没有物理AI业务，也未形成相关业务收入。\n\n解码分析：\n🔍 事实：股票异常波动期间公司自查及第一大股东确认无未公开重大信息，公司生产经营正常，且明确否认物理AI业务存在。\n💡 判断：市场对“物理AI”概念的炒作驱动股价异动，但公司基本面未变，缺乏实质业绩支撑，投资者需警惕概念炒作风险。\n🧭 行动：建议投资者理性看待，不盲目追高；可关注公司后续是否切入物理AI领域，但当前以观望为主。",
+      "titleCn": "天娱数科：目前无物理AI业务，未形成相关业务收入",
+      "aiProcessedAt": "2026-06-08T13:04:56.133Z"
     },
     "1d9c2562-978d-4117-9436-107473dce0e4": {
       "id": "1d9c2562-978d-4117-9436-107473dce0e4",
@@ -11373,41 +11255,150 @@
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📡",
       "score": 65
+    },
+    "2c769ed1-fafb-48b0-ac68-41df7ca6db5e": {
+      "id": "2c769ed1-fafb-48b0-ac68-41df7ca6db5e",
+      "title": "MetaMask Launches AI Agent Wallet With Built-In Security Controls",
+      "url": "https://decrypt.co/370239/metamask-launches-ai-agent-wallet-security-controls",
+      "summary": "MetaMask's new self-custodial wallet is designed to let AI agents trade across DeFi while keeping users in control of funds and approvals.",
+      "contentText": "MetaMask's new self-custodial wallet is designed to let AI agents trade across DeFi while keeping users in control of funds and approvals.",
+      "source": "Decrypt",
+      "sourceId": "decrypt",
+      "sourceIcon": "🔐",
+      "time": "4 分钟前",
+      "isoDate": "2026-06-08T13:01:03.000Z",
+      "category": "crypto",
+      "tags": [
+        "MetaMask",
+        "AI代理",
+        "DeFi",
+        "自我托管钱包",
+        "安全控制"
+      ],
+      "likes": 0,
+      "comments": 0,
+      "isRead": false,
+      "isSaved": false,
+      "readingTime": "1 分钟",
+      "coverGradient": "from-[#2dd4bf]/25 to-[#7c5cfc]/10",
+      "coverEmoji": "🔐",
+      "score": 62,
+      "aiSummary": "MetaMask 新推出的一款自我托管钱包，旨在让AI代理在DeFi中进行交易，同时用户保留对资金和授权的控制权。\n\n解码分析：\n🔍 事实：MetaMask 推出了一款专为AI代理设计的自托管钱包，内置安全控制功能，允许AI代理在DeFi中交易而用户仍掌握资金和审批权。\n💡 判断：这是DeFi领域向自动化与安全性结合的重要尝试，用户控制权保留降低了AI代理失控风险，但实际安全性和代理行为可预测性仍需验证。\n🧭 行动：关注该钱包的测试进展及安全审计报告，如对AI+DeFi感兴趣可尝试早期体验，但建议暂缓大额资金部署。",
+      "titleCn": "MetaMask 推出内置安全控制的AI代理钱包",
+      "aiProcessedAt": "2026-06-08T13:07:23.889Z"
+    },
+    "b0e912dd-4609-4840-88f8-349149bfd165": {
+      "id": "b0e912dd-4609-4840-88f8-349149bfd165",
+      "title": "Bitcoin's $63K Reclaim Liquidates $540M in Crypto Shorts, a 7-Week High",
+      "url": "https://decrypt.co/370306/bitcoins-63k-reclaim-liquidates-540m-in-shorts-a-7-week-high",
+      "summary": "Experts remain cautious of Bitcoin’s weekend rebound to $63,000, pointing to ETF outflows and CME BTC volatility.",
+      "contentText": "Experts remain cautious of Bitcoin’s weekend rebound to $63,000, pointing to ETF outflows and CME BTC volatility.",
+      "source": "Decrypt",
+      "sourceId": "decrypt",
+      "sourceIcon": "🔐",
+      "time": "24 分钟前",
+      "isoDate": "2026-06-08T12:41:22.000Z",
+      "category": "crypto",
+      "tags": [],
+      "likes": 0,
+      "comments": 0,
+      "isRead": false,
+      "isSaved": false,
+      "readingTime": "1 分钟",
+      "coverGradient": "from-[#2dd4bf]/25 to-[#7c5cfc]/10",
+      "coverEmoji": "🔐",
+      "score": 61
+    },
+    "9ae8ed6e-a060-40af-8655-c9137d439209": {
+      "id": "9ae8ed6e-a060-40af-8655-c9137d439209",
+      "title": "Morning Minute: Bitcoin Recovers After Fall Below $60k",
+      "url": "https://decrypt.co/370303/morning-minute-bitcoin-recovers-after-fall-below-60k",
+      "summary": "Crypto rebounded Monday after Friday's selloff, driven by strong jobs data, AI IPO liquidity drain and Saylor worries.",
+      "contentText": "Crypto rebounded Monday after Friday's selloff, driven by strong jobs data, AI IPO liquidity drain and Saylor worries.",
+      "source": "Decrypt",
+      "sourceId": "decrypt",
+      "sourceIcon": "🔐",
+      "time": "44 分钟前",
+      "isoDate": "2026-06-08T12:21:16.000Z",
+      "category": "crypto",
+      "tags": [],
+      "likes": 0,
+      "comments": 0,
+      "isRead": false,
+      "isSaved": false,
+      "readingTime": "1 分钟",
+      "coverGradient": "from-[#2dd4bf]/25 to-[#7c5cfc]/10",
+      "coverEmoji": "🔐",
+      "score": 61
+    },
+    "97325dc7-ac03-4087-95b1-c5fe27414659": {
+      "id": "97325dc7-ac03-4087-95b1-c5fe27414659",
+      "title": "Reform UK's Farage 'Evading' Scrutiny Over Tether Billionaire's $6.7M Gift: Labour",
+      "url": "https://decrypt.co/370295/reform-uks-farage-evading-scrutiny-over-tether-billionaires-6-7m-gift-labour",
+      "summary": "Labour Party Chair Anna Turley wrote to Nigel Farage accusing him of “evading reasonable scrutiny” over Christopher Harborne’s gift.",
+      "contentText": "Labour Party Chair Anna Turley wrote to Nigel Farage accusing him of “evading reasonable scrutiny” over Christopher Harborne’s gift.",
+      "source": "Decrypt",
+      "sourceId": "decrypt",
+      "sourceIcon": "🔐",
+      "time": "1 小时前",
+      "isoDate": "2026-06-08T11:35:27.000Z",
+      "category": "crypto",
+      "tags": [],
+      "likes": 0,
+      "comments": 0,
+      "isRead": false,
+      "isSaved": false,
+      "readingTime": "1 分钟",
+      "coverGradient": "from-[#2dd4bf]/25 to-[#7c5cfc]/10",
+      "coverEmoji": "🔐",
+      "score": 60
+    },
+    "73803759-14cf-40ad-922b-84f6c2db4769": {
+      "id": "73803759-14cf-40ad-922b-84f6c2db4769",
+      "title": "Frontier AI Models Can Find Crypto's Biggest Bugs. Experts Warn the Industry Isn't Ready",
+      "url": "https://decrypt.co/370232/frontier-ai-models-find-crypto-bugs-industry-isnt-ready",
+      "summary": "The Zcash vulnerability uncovered with help from Anthropic's Claude Opus 4.8 signals a shift in who may discover critical flaws first.",
+      "contentText": "The Zcash vulnerability uncovered with help from Anthropic's Claude Opus 4.8 signals a shift in who may discover critical flaws first.",
+      "source": "Decrypt",
+      "sourceId": "decrypt",
+      "sourceIcon": "🔐",
+      "time": "19 小时前",
+      "isoDate": "2026-06-07T18:01:03.000Z",
+      "category": "crypto",
+      "tags": [],
+      "likes": 0,
+      "comments": 0,
+      "isRead": false,
+      "isSaved": false,
+      "readingTime": "1 分钟",
+      "coverGradient": "from-[#2dd4bf]/25 to-[#7c5cfc]/10",
+      "coverEmoji": "🔐",
+      "score": 53
+    },
+    "b7a8468b-2ff8-46d5-bcfe-16f88999e24c": {
+      "id": "b7a8468b-2ff8-46d5-bcfe-16f88999e24c",
+      "title": "Wall Street Is Coming for Hyperliquid's Perps Crown, Arthur Hayes Says",
+      "url": "https://decrypt.co/370236/wall-street-coming-hyperliquid-perps-crown-arthur-hayes-says",
+      "summary": "Arthur Hayes warned that Hyperliquid's core value driver—using trading fees to burn tokens—exposes the protocol to market share losses.",
+      "contentText": "Arthur Hayes warned that Hyperliquid's core value driver—using trading fees to burn tokens—exposes the protocol to market share losses.",
+      "source": "Decrypt",
+      "sourceId": "decrypt",
+      "sourceIcon": "🔐",
+      "time": "21 小时前",
+      "isoDate": "2026-06-07T15:48:14.000Z",
+      "category": "crypto",
+      "tags": [],
+      "likes": 0,
+      "comments": 0,
+      "isRead": false,
+      "isSaved": false,
+      "readingTime": "1 分钟",
+      "coverGradient": "from-[#2dd4bf]/25 to-[#7c5cfc]/10",
+      "coverEmoji": "🔐",
+      "score": 44
     }
   },
   "fetchLogs": [
-    {
-      "sourceId": "mit-tech-review",
-      "sourceName": "MIT Tech Review",
-      "entries": 10,
-      "newEntries": 10
-    },
-    {
-      "sourceId": "huggingface",
-      "sourceName": "Hugging Face",
-      "entries": 30,
-      "newEntries": 30
-    },
-    {
-      "sourceId": "anthropic",
-      "sourceName": "Anthropic",
-      "entries": 0,
-      "newEntries": 0,
-      "error": "Status code 404"
-    },
-    {
-      "sourceId": "openai",
-      "sourceName": "OpenAI",
-      "entries": 0,
-      "newEntries": 0,
-      "error": "Status code 403"
-    },
-    {
-      "sourceId": "36kr",
-      "sourceName": "36氪",
-      "entries": 30,
-      "newEntries": 30
-    },
     {
       "sourceId": "techcrunch",
       "sourceName": "TechCrunch",
@@ -11693,6 +11684,38 @@
       "sourceName": "36氪",
       "entries": 30,
       "newEntries": 30
+    },
+    {
+      "sourceId": "theblock",
+      "sourceName": "The Block",
+      "entries": 0,
+      "newEntries": 0,
+      "error": "Status code 404"
+    },
+    {
+      "sourceId": "cryptoslate",
+      "sourceName": "CryptoSlate",
+      "entries": 0,
+      "newEntries": 0,
+      "error": "Status code 403"
+    },
+    {
+      "sourceId": "decrypt",
+      "sourceName": "Decrypt",
+      "entries": 30,
+      "newEntries": 30
+    },
+    {
+      "sourceId": "bitcoinmagazine",
+      "sourceName": "Bitcoin Magazine",
+      "entries": 10,
+      "newEntries": 10
+    },
+    {
+      "sourceId": "blockworks",
+      "sourceName": "Blockworks",
+      "entries": 30,
+      "newEntries": 30
     }
   ],
   "lastFetched": {
@@ -11720,11 +11743,11 @@
     "smol-ai": "2026-06-07T14:33:25.847Z",
     "coindesk": "2026-06-08T12:56:17.864Z",
     "cointelegraph": "2026-06-08T12:56:19.646Z",
-    "theblock": "2026-06-07T14:29:30.049Z",
-    "decrypt": "2026-06-07T14:33:33.151Z",
-    "bitcoinmagazine": "2026-06-07T14:33:35.284Z",
-    "blockworks": "2026-06-07T14:33:36.985Z",
-    "cryptoslate": "2026-06-07T14:33:37.351Z",
+    "theblock": "2026-06-08T13:05:38.673Z",
+    "decrypt": "2026-06-08T13:06:05.697Z",
+    "bitcoinmagazine": "2026-06-08T13:06:31.708Z",
+    "blockworks": "2026-06-08T13:07:02.575Z",
+    "cryptoslate": "2026-06-08T13:05:46.292Z",
     "cls-cn": "2026-06-07T14:29:32.301Z",
     "eastmoney": "2026-06-07T14:29:43.359Z",
     "xueqiu": "2026-06-07T14:29:30.787Z",
