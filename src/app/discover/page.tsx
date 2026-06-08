@@ -319,7 +319,41 @@ export default function DiscoverPage() {
           </div>
         )}
 
-        {/* 币圈信息源（来自 crypto-data 的静态展示） */}
+        {/* 工具推荐 */}
+        <section className="mb-10">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.04)" }} />
+            <span className="text-xs font-semibold tracking-widest" style={{ color: "rgba(255,255,255,0.2)" }}>
+              🛠 内置工具
+            </span>
+            <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.04)" }} />
+          </div>
+          <Link href="/tools"
+            className="glass rounded-xl p-4 flex items-center gap-4 cursor-pointer transition-all duration-300 hover:translate-y-[-2px]"
+          >
+            <span className="text-3xl">📡</span>
+            <div className="flex-1 min-w-0">
+              <div className="text-sm font-semibold">RSS Everything</div>
+              <div className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>
+                将任意没有 RSS 的网页转换为 RSS 订阅源，然后添加到本平台
+              </div>
+              <div className="flex items-center gap-2 mt-1.5">
+                <span className="text-[10px] px-1.5 py-0.5 rounded-sm" style={{ background: "rgba(124,92,252,0.1)", color: "#a78bfa" }}>
+                  🔗 粘贴网址
+                </span>
+                <span className="text-[10px] px-1.5 py-0.5 rounded-sm" style={{ background: "rgba(45,212,191,0.1)", color: "#2dd4bf" }}>
+                  📝 定义规则
+                </span>
+                <span className="text-[10px] px-1.5 py-0.5 rounded-sm" style={{ background: "rgba(251,191,36,0.1)", color: "#fbbf24" }}>
+                  📡 生成 RSS
+                </span>
+              </div>
+            </div>
+            <span className="text-xl" style={{ color: "rgba(255,255,255,0.2)" }}>→</span>
+          </Link>
+        </section>
+
+        {/* 币圈生态 — 外部资源 */}
         <div className="mb-10">
           <div className="flex items-center gap-3 mb-6">
             <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.04)" }} />

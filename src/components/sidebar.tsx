@@ -8,6 +8,7 @@ const NAV_ITEMS_TOP = [
   { href: "/", icon: "🏠", label: "首页" },
   { href: "/crypto", icon: "₿", label: "币圈" },
   { href: "/discover", icon: "🔍", label: "发现" },
+  { href: "/tools", icon: "🛠", label: "工具" },
   { href: "/library", icon: "📋", label: "收藏" },
   { href: "/glossary", icon: "📖", label: "术语" },
 ];
