@@ -418,28 +418,6 @@
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📡"
     },
-    "5e5c7165-877b-4939-a212-78a32c75620a": {
-      "id": "5e5c7165-877b-4939-a212-78a32c75620a",
-      "title": "硬氪独家 | 唐文斌「原力灵机」并购物流机器人公司，并获智谱、商汤、阶跃等投资",
-      "url": "https://36kr.com/p/3838835333253385?f=rss",
-      "summary": "作者 | 邱晓芬",
-      "content": "\n \n \n  <p>作者&nbsp;|&nbsp;邱晓芬</p>\n  <p>编辑&nbsp;|&nbsp;袁斯来</p>\n  <p>硬氪独家获悉，具身智能企业「原力灵机」近期完成新一轮融资，资方主要为数家大模型公司，包括<strong>智谱、阶跃星辰、商汤科技。</strong>此外，<strong>华勤、上汽恒旭</strong>等产业投资方持续加注<strong>。</strong></p>\n  <p><strong>「原力灵机」</strong>是一家通用具身大模型公司，2025年3月由旷视科技联合创始人兼CTO<strong>唐文斌</strong>创立，团队核心创始成员为旷视科技原班人马。</p>\n  <p>有意思的是，此次融资也是商汤、旷视这两家曾经的对手，在具身智能的热潮中罕见“会师”；</p>\n  <p>另外，算上A+轮独家领投的<strong>阿里</strong>，这也是具身智能赛道罕见同时聚齐国内四家大模型厂商——此前，智谱仅通过Z基金小范围投资具身智能领域，阶跃星辰则几乎未出手具身智能。</p>\n  <p>而这一集体动作也释放出一个信号，当<strong>大模型竞争的主战从Token向Action转移</strong>，拥有物理世界交互能力的具身模型，已成为模型公司们锚定的下一片高地。</p>\n  <p>伴随着此次融资，唐文斌也在兵合一处，着手整合机器人资产。</p>\n  <p><strong>硬氪独家获悉，「原力灵机」近期通过股权并购方式，完成了与「Atomix」（原力聚合）物流机器人的合并，</strong>剑指具身智能的大规模落地与全球化扩张。</p>\n  <p>「<strong>Atomix</strong>」的业务基因最早可以追溯到2016年——彼时，唐文斌在旷视科技内部主导智慧物流与机器人调度业务（河图系统），主推多形态物流机器人解决方案。</p>\n  <p>直到2024年7月，随着旷视业务变化，唐文斌将物流机器人业务从旷视体系剥离独立，并成立「<strong>Atomix</strong>」。</p>\n  <p>经过几年的探索，「<strong>Atomix</strong>」的托盘四向车销量已达全球第二，累计服务项目超过500个，客户包括优衣库、蜜雪冰城、宁德时代等，<strong>公司年营收近十亿</strong>。</p>\n  <p>随着具身智能硬件供应链趋近成熟，行业已经逼近那堵必须逾越高墙：具身大脑。相比语言模型进化路径的清晰，具身智能模型当下甚至找不到低成本、海量且高质量的数据，遑论找到收敛的训练范式。可以说，整个行业都在混沌之中摸索。</p>\n  <p>这种情况下，<strong>本体、大脑、数据的整合，或许成为具身赛道的新常态&nbsp;</strong>。</p>\n  <p>一直以来，具身智能行业的理想状态是打造真正的数据飞轮。而实际情况是，行业正处于“数据死结”状态——模型需要真实场景里的错误数据来推进进化，而若没有好模型的武装，机器人无法进场景，也就无法采集真实的数据。</p>\n  <p>因此，有消息人士称，两家公司的合并，本质上是闭环模型与场景，打开数据死结。</p>\n  <p>正如唐文斌此前在采访中提到，Picking（抓取）正是具身智能时代的“原子任务”——Picking之于具身智能，正如Coding之于大模型，而「<strong>Atomix</strong>」正像是一台连续运转的Picking数据发动机。</p>\n  <p class=\"image-wrapper\"><img data-img-size-val=\"400,219\" src=\"https://img.36krcdn.com/hsossms/20260604/v2_ca53593da2bd49cfa7683019c3e61d37@1199336245_img_000?x-oss-process=image/format,jpg/interlace,1\"></p>\n  <p class=\"img-desc\">「原力灵机」机器人 做早餐 （图源/企业）&nbsp;</p>\n  <p>据了解，在未来，<strong>「Atomix」在超20个国家、500多个项目里跑出来的真实数据，将直接成为「原力灵机」模型训练的燃料；而「原力灵机」所训练的具身智能模型，也将快速实现跟「Atomix」现有机器人进行协同作业。</strong></p>\n  <p>这一构想或许并非空中楼阁，而是建立在一定的技术底座之上。在此之前，「原力灵机」已经推出了通用具身大模型“DM0”。</p>\n  <p>唐文斌此前接受采访时提到，在数据层面，「原力灵机」已完成了业内首次“三类数据大融合”——将互联网语义、智能驾驶物理规则、机器人实操数据进行混合训练，提升数据的规模与质量。</p>\n  <p>而这种跨域混合训练的方式，使得“DM0”跳出了对特定硬件参数的依赖，像一位经验丰富的“老司机”，在海量异构数据中抽象出了通用的物理规律，并且能够无视硬件差异，在多种不同构型的机器人本体间迁移，实现通用的操作逻辑。</p>\n  <p class=\"image-wrapper\"><img data-img-size-val=\"400,219\" src=\"https://img.36krcdn.com/hsossms/20260604/v2_2973303acc0647c283f75291a74610fe@1199336245_img_000?x-oss-process=image/format,jpg/interlace,1\"></p>\n  <p class=\"img-desc\">「原力灵机」机器人 在调酒 （图源/企业）&nbsp;</p>\n  <p>更关键的是，「原力灵机」也试图将大模型的“思维链推理”延伸至物理空间——这也使得，“DM0”仅用2.4B的小参数规模，就实现了突破亚毫米级的精细操作，在长程连续任务中的成功率大幅提升。</p>\n  <p>通过一系列组合拳，“DM0”正试图打破传统具身模型数据单一、换机即瘫、参数臃肿的痛点。</p>\n  <p>此次合并、融资后，中国的具身智能行业正迎来一位强劲玩家。更重要的是，这也提示行业正进入下一个阶段——寻找到具身模型的scaling law。</p>\n  <p>这绝非仅靠堆砌机器人本体就能逾越的险隘。</p>\n  <p>就在本周，媒体披露字节跳动正重金招募具身智能技术负责人，目标直指头部创业公司的核心技术骨干；与此同时，海外具身智能明星企业Skild AI也刚完成了对Zebra（斑马技术）机器人自动化业务的并购。</p>\n  <p>海内外巨头的动向如出一辙——随着本体制造商、数据资产方、模型研发者、场景运营方开始加速聚拢，行业正式进入深水区。</p>\n  <p><strong>首页图源｜网络</strong></p>\n  <p><strong>排版｜范馨雅</strong></p>\n  <p class=\"image-wrapper\"><img data-img-size-val=\"1080,337\" src=\"https://img.36krcdn.com/hsossms/20260604/v2_34c2c70747ed4937b47ab288bf42e177@1199336245_oswg53536oswg1080oswg337_img_000?x-oss-process=image/format,jpg/interlace,1\"></p>\n  <p class=\"img-desc\">欢迎交流</p>\n \n",
-      "contentText": "作者 | 邱晓芬\n  编辑 | 袁斯来\n  硬氪独家获悉，具身智能企业「原力灵机」近期完成新一轮融资，资方主要为数家大模型公司，包括智谱、阶跃星辰、商汤科技。此外，华勤、上汽恒旭等产业投资方持续加注。\n  「原力灵机」是一家通用具身大模型公司，2025年3月由旷视科技联合创始人兼CTO唐文斌创立，团队核心创始成员为旷视科技原班人马。\n  有意思的是，此次融资也是商汤、旷视这两家曾经的对手，在具身智能的热潮中罕见“会师”；\n  另外，算上A+轮独家领投的阿里，这也是具身智能赛道罕见同时聚齐国内四家大模型厂商——此前，智谱仅通过Z基金小范围投资具身智能领域，阶跃星辰则几乎未出手具身智能。\n  而这一集体动作也释放出一个信号，当大模型竞争的主战从Token向Action转移，拥有物理世界交互能力的具身模型，已成为模型公司们锚定的下一片高地。\n  伴随着此次融资，唐文斌也在兵合一处，着手整合机器人资产。\n  硬氪独家获悉，「原力灵机」近期通过股权并购方式，完成了与「Atomix」（原力聚合）物流机器人的合并，剑指具身智能的大规模落地与全球化扩张。\n  「Atomix」的业务基因最早可以追溯到2016年——彼时，唐文斌在旷视科技内部主导智慧物流与机器人调度业务（河图系统），主推多形态物流机器人解决方案。\n  直到2024年7月，随着旷视业务变化，唐文斌将物流机器人业务从旷视体系剥离独立，并成立「Atomix」。\n  经过几年的探索，「Atomix」的托盘四向车销量已达全球第二，累计服务项目超过500个，客户包括优衣库、蜜雪冰城、宁德时代等，公司年营收近十亿。\n  随着具身智能硬件供应链趋近成熟，行业已经逼近那堵必须逾越高墙：具身大脑。相比语言模型进化路径的清晰，具身智能模型当下甚至找不到低成本、海量且高质量的数据，遑论找到收敛的训练范式。可以说，整个行业都在混沌之中摸索。\n  这种情况下，本体、大脑、数据的整合，或许成为具身赛道的新常态 。\n  一直以来，具身智能行业的理想状态是打造真正的数据飞轮。而实际情况是，行业正处于“数据死结”状态——模型需要真实场景里的错误数据来推进进化，而若没有好模型的武装，机器人无法进场景，也就无法采集真实的数据。\n  因此，有消息人士称，两家公司的合并，本质上是闭环模型与场景，打开数据死结。\n  正如唐文斌此前在采访中提到，Picking（抓取）正是具身智能时代的“原子任务”——Picking之于具身智能，正如Coding之于大模型，而「Atomix」正像是一台连续运转的Picking数据发动机。\n  \n  「原力灵机」机器人 做早餐 （图源/企业） \n  据了解，在未来，「Atomix」在超20个国家、500多个项目里跑出来的真实数据，将直接成为「原力灵机」模型训练的燃料；而「原力灵机」所训练的具身智能模型，也将快速实现跟「Atomix」现有机器人进行协同作业。\n  这一构想或许并非空中楼阁，而是建立在一定的技术底座之上。在此之前，「原力灵机」已经推出了通用具身大模型“DM0”。\n  唐文斌此前接受采访时提到，在数据层面，「原力灵机」已完成了业内首次“三类数据大融合”——将互联网语义、智能驾驶物理规则、机器人实操数据进行混合训练，提升数据的规模与质量。\n  而这种跨域混合训练的方式，使得“DM0”跳出了对特定硬件参数的依赖，像一位经验丰富的“老司机”，在海量异构数据中抽象出了通用的物理规律，并且能够无视硬件差异，在多种不同构型的机器人本体间迁移，实现通用的操作逻辑。\n  \n  「原力灵机」机器人 在调酒 （图源/企业） \n  更关键的是，「原力灵机」也试图将大模型的“思维链推理”延伸至物理空间——这也使得，“DM0”仅用2.4B的小参数规模，就实现了突破亚毫米级的精细操作，在长程连续任务中的成功率大幅提升。\n  通过一系列组合拳，“DM0”正试图打破传统具身模型数据单一、换机即瘫、参数臃肿的痛点。\n  此次合并、融资后，中国的具身智能行业正迎来一位强劲玩家。更重要的是，这也提示行业正进入下一个阶段——寻找到具身模型的scaling law。\n  这绝非仅靠堆砌机器人本体就能逾越的险隘。\n  就在本周，媒体披露字节跳动正重金招募具身智能技术负责人，目标直指头部创业公司的核心技术骨干；与此同时，海外具身智能明星企业Skild AI也刚完成了对Zebra（斑马技术）机器人自动化业务的并购。\n  海内外巨头的动向如出一辙——随着本体制造商、数据资产方、模型研发者、场景运营方开始加速聚拢，行业正式进入深水区。\n  首页图源｜网络\n  排版｜范馨雅\n  \n  欢迎交流",
-      "source": "36氪",
-      "sourceId": "36kr",
-      "sourceIcon": "📡",
-      "time": "15 小时前",
-      "isoDate": "2026-06-05T01:00:00.000Z",
-      "category": "tech",
-      "tags": [],
-      "likes": 0,
-      "comments": 0,
-      "isRead": false,
-      "isSaved": false,
-      "readingTime": "4 分钟",
-      "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
-      "coverEmoji": "📡"
-    },
     "13ea7a53-28f4-441e-83c6-e08e17249d65": {
       "id": "13ea7a53-28f4-441e-83c6-e08e17249d65",
       "title": "热门中概股美股盘前多数下跌，百度跌超4%",
@@ -11429,22 +11407,31 @@
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📰",
       "score": 80
+    },
+    "1a8708a7-fa0c-4fa3-be98-4ef9993dec49": {
+      "id": "1a8708a7-fa0c-4fa3-be98-4ef9993dec49",
+      "title": "White hats rescue $500K in NFTs after Flooring exploit",
+      "url": "https://cointelegraph.com/news/yuga-labs-nft-rescue-flooring-protocol-exploit?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "summary": "CoinGecko and NFT Price Floor data show NFT market cap has cooled since April, while CryptoPunks and BAYC remain top collections by value.",
+      "contentText": "CoinGecko and NFT Price Floor data show NFT market cap has cooled since April, while CryptoPunks and BAYC remain top collections by value.",
+      "source": "Cointelegraph",
+      "sourceId": "cointelegraph",
+      "sourceIcon": "⚡",
+      "time": "1 小时前",
+      "isoDate": "2026-06-08T12:08:18.000Z",
+      "category": "crypto",
+      "tags": [],
+      "likes": 0,
+      "comments": 0,
+      "isRead": false,
+      "isSaved": false,
+      "readingTime": "1 分钟",
+      "coverGradient": "from-[#fbbf24]/20 to-[#f472b6]/10",
+      "coverEmoji": "⚡",
+      "score": 64
     }
   },
   "fetchLogs": [
-    {
-      "sourceId": "jiqizhixin",
-      "sourceName": "机器之心",
-      "entries": 0,
-      "newEntries": 0,
-      "error": "Unexpected close tag\nLine: 10\nColumn: 249\nChar: >"
-    },
-    {
-      "sourceId": "qbitai",
-      "sourceName": "量子位",
-      "entries": 10,
-      "newEntries": 10
-    },
     {
       "sourceId": "mit-tech-review",
       "sourceName": "MIT Tech Review",
@@ -11749,6 +11736,18 @@
       "sourceName": "Cointelegraph",
       "entries": 30,
       "newEntries": 30
+    },
+    {
+      "sourceId": "coindesk",
+      "sourceName": "CoinDesk",
+      "entries": 25,
+      "newEntries": 25
+    },
+    {
+      "sourceId": "cointelegraph",
+      "sourceName": "Cointelegraph",
+      "entries": 30,
+      "newEntries": 30
     }
   ],
   "lastFetched": {
@@ -11774,8 +11773,8 @@
     "one-useful-thing": "2026-06-07T14:32:55.587Z",
     "latent-space": "2026-06-07T14:33:10.725Z",
     "smol-ai": "2026-06-07T14:33:25.847Z",
-    "coindesk": "2026-06-08T12:56:17.864Z",
-    "cointelegraph": "2026-06-08T12:56:19.646Z",
+    "coindesk": "2026-06-08T13:28:18.980Z",
+    "cointelegraph": "2026-06-08T13:28:31.306Z",
     "theblock": "2026-06-07T14:29:30.049Z",
     "decrypt": "2026-06-07T14:33:33.151Z",
     "bitcoinmagazine": "2026-06-07T14:33:35.284Z",

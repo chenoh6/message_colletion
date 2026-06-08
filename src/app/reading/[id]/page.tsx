@@ -62,7 +62,7 @@ export default function ReadingPage() {
           <div className="flex items-center gap-2 text-xs text-tertiary mb-3">
             <span className="text-accent-foreground font-medium">{entry.source}</span>
             <span>·</span>
-            <span>{formatTime(entry.isoDate)}</span>
+            <span>{entry.time}</span>
           </div>
 
           <h1 className="text-2xl md:text-3xl font-bold leading-tight tracking-tight mb-5 text-foreground">

@@ -86,7 +86,7 @@ function SourceCard({ sourceId, sourceName, sourceIcon, entries, onOpen }: {
                 </div>
                 <div className="flex items-center gap-2 mt-0.5">
                   <span className="text-[9px]" style={{ color: "rgba(255,255,255,0.25)" }}>
-                    {formatTime(entry.isoDate)}
+                    {entry.time}
                   </span>
                   {entry.aiSummary && (
                     <span className="text-[9px] px-1 py-[1px] rounded-sm"

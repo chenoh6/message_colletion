@@ -36,7 +36,7 @@ export function FeaturedHero({ entry }: { entry: Entry }) {
             <div className="flex items-center gap-2.5 text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
               <span style={{ color: "#c4b5fd", fontWeight: 500 }}>{entry.source}</span>
               <span>·</span>
-              <span>{formatTime(entry.isoDate)}</span>
+              <span>{entry.time}</span>
             </div>
             </div>
           </div>
