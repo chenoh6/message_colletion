@@ -1,13 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
+import { useState } from "react";
 import { TopBar } from "@/components/topbar";
-import { TopicRow } from "@/components/topic-row";
 import { TrendPanel } from "@/components/trend-panel";
 import { TimelineView } from "@/components/timeline-view";
 import { useEntries, useFetchStatus } from "@/lib/use-data";
 import { TRENDS } from "@/lib/data";
+import { CATEGORIES } from "@/lib/sources";
 import { getSourceColor } from "@/lib/crypto-data";
 import { HighlightedText } from "@/components/term-highlight";
 import { MarketDashboard } from "@/components/market-dashboard";
@@ -18,13 +17,38 @@ import {
   DialogOverlay,
 } from "@/components/ui/dialog";
 
-/* ---------- 市场切换 ---------- */
-const MARKET_TABS = [
-  { id: "all", label: "🔥 综合", icon: "🌐" },
-  { id: "cn", label: "📈 A股", icon: "📊" },
-  { id: "us", label: "🇺🇸 美股", icon: "🏛️" },
-  { id: "crypto", label: "₿ 币圈", icon: "₿" },
-];
+/* ---------- 话题行（为你推荐 + 分类） ---------- */
+function TopicRow({ active, counts, onSelect }: {
+  active: string;
+  counts: Record<string, number>;
+  onSelect: (id: string) => void;
+}) {
+  const items = [
+    { id: "all", name: "✨ 为你推荐", icon: "" },
+    ...CATEGORIES,
+  ];
+
+  return (
+    <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-thin" style={{ scrollbarWidth: "none" }}>
+      {items.map((item) => (
+        <button key={item.id}
+          onClick={() => onSelect(item.id)}
+          className="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all border cursor-pointer"
+          style={{
+            background: active === item.id ? "rgba(124,92,252,0.15)" : "rgba(255,255,255,0.05)",
+            borderColor: active === item.id ? "rgba(124,92,252,0.25)" : "rgba(255,255,255,0.06)",
+            color: active === item.id ? "#c4b5fd" : "rgba(255,255,255,0.55)",
+          }}
+        >
+          {item.icon} {item.name}
+          <span className="text-[10px]" style={{ color: "rgba(255,255,255,0.3)" }}>
+            {counts[item.id] || 0}
+          </span>
+        </button>
+      ))}
+    </div>
+  );
+}
 
 /* ---------- 解码弹窗 ---------- */
 function DecodeDialog({ entry, open, onClose }: { entry: Entry | null; open: boolean; onClose: () => void }) {
@@ -94,19 +118,20 @@ function DecodeDialog({ entry, open, onClose }: { entry: Entry | null; open: boo
 }
 
 export default function HomePage() {
-  const [market, setMarket] = useState("all");
+  const [topic, setTopic] = useState("all");
   const { entries, loading, total } = useEntries({ limit: 50, pollInterval: 0, sortBy: "score" });
   const { totalEntries } = useFetchStatus();
   const [selectedEntry, setSelectedEntry] = useState<Entry | null>(null);
   const [decodingId, setDecodingId] = useState<string | null>(null);
-  const [savedCount, setSavedCount] = useState(0);
 
-  useEffect(() => {
-    try { const raw = localStorage.getItem("crypto_saved_ids"); if (raw) setSavedCount(JSON.parse(raw).length); } catch {}
-  }, []);
+  // 按话题过滤
+  const filtered = topic === "all" ? entries : entries.filter(e => e.category === topic);
 
-  // 按市场过滤
-  const filtered = market === "all" ? entries : entries.filter(e => e.category === market);
+  // 分类计数（从真实数据统计）
+  const topicCounts: Record<string, number> = { all: entries.length };
+  for (const cat of CATEGORIES) {
+    topicCounts[cat.id] = entries.filter((e) => e.category === cat.id).length;
+  }
 
   const handleDecode = async (entry: Entry) => {
     setDecodingId(entry.id);
@@ -126,48 +151,8 @@ export default function HomePage() {
       <TopBar />
       <div className="flex-1 overflow-y-auto scrollbar-thin px-8 py-6 pb-8 container-page">
         <div className="mb-4">
-          <div className="text-[10px] text-dim tracking-wider mb-1 flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-            AI 驱动 · 信息聚合 · 涵盖 A股/美股/币圈
-          </div>
-          <div className="flex items-end justify-between">
-            <div>
-              <h1 className="text-2xl font-bold tracking-tight">☀️ 早上好，探索 <span className="gradient-text">今日市场</span></h1>
-              <p className="text-xs mt-1 text-dim">切换市场查看对应信息 · 点击事件查看 AI 解码</p>
-            </div>
-            <div className="flex gap-5 text-xs text-tertiary">
-              <span>📥 总计 <strong className="text-dim">{totalEntries || total || 0}</strong> 条</span>
-            </div>
-          </div>
+          <TopicRow active={topic} counts={topicCounts} onSelect={setTopic} />
         </div>
-
-        {/* 市场切换 */}
-        <div className="flex gap-1.5 mb-4">
-          {MARKET_TABS.map((tab) => (
-            <button key={tab.id} onClick={() => setMarket(tab.id)}
-              className="px-4 py-1.5 rounded-lg text-sm font-medium transition-all cursor-pointer"
-              style={{
-                background: market === tab.id ? "rgba(124,92,252,0.15)" : "rgba(255,255,255,0.04)",
-                color: market === tab.id ? "#c4b5fd" : "var(--text-dim)",
-                border: market === tab.id ? "1px solid rgba(124,92,252,0.2)" : "1px solid transparent",
-              }}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-
-        {/* 收藏提醒 */}
-        {savedCount > 0 && (
-          <div className="mb-3">
-            <Link href="/library" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs transition-all"
-              style={{ background: "rgba(124,92,252,0.06)", border: "1px solid rgba(124,92,252,0.1)", color: "var(--text-dim)" }}>
-              📌 你收藏了 <strong className="text-accent-foreground">{savedCount} 篇</strong> 还没读 → 去收藏夹
-            </Link>
-          </div>
-        )}
-
-        <div className="mb-4"><TopicRow /></div>
 
         {loading && (
           <div className="flex items-center justify-center py-20">
@@ -186,15 +171,15 @@ export default function HomePage() {
               ) : (
                 <div className="glass-card rounded-2xl p-8 text-center">
                   <p className="text-sm text-dim">
-                    {market === "all" ? "内容采集中" : market === "cn" ? "A股数据采集中" : market === "us" ? "美股数据采集中" : "币圈数据采集中"}
+                    {topic === "all" ? "请先在「发现」页开启信息源" : `${topic} 数据采集中`}
                   </p>
-                  <p className="text-xs mt-1 text-tertiary">请在「发现」页管理信息源，或点击右侧手动触发抓取</p>
+                  <p className="text-xs mt-1 text-tertiary">开启信息源后，内容将自动出现在这里</p>
                 </div>
               )}
             </div>
             <div className="flex flex-col gap-4">
               <div className="sticky top-6 flex flex-col gap-4">
-                <MarketDashboard market={market === "all" ? "crypto" : market as "crypto" | "cn" | "us"} />
+                <MarketDashboard market={topic === "all" ? "crypto" : topic as "crypto" | "cn" | "us"} />
                 <TrendPanel trends={TRENDS} />
               </div>
             </div>
@@ -207,7 +192,7 @@ export default function HomePage() {
             数据就绪 · {totalEntries || total || 0} 条内容
           </span>
           <span>•</span>
-          <span>数据源: 27 个活跃</span>
+          <span>信息源: 可在「发现」页管理</span>
         </div>
       </div>
       <DecodeDialog entry={selectedEntry} open={!!selectedEntry} onClose={() => setSelectedEntry(null)} />
