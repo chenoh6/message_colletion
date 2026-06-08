@@ -16,6 +16,7 @@ import { PriceEventChart } from "@/components/price-event-chart";
 import { MarketDashboard } from "@/components/market-dashboard";
 import { useEntries } from "@/lib/use-data";
 import type { Entry } from "@/lib/types";
+import { formatTime } from "@/lib/utils";
 import {
   Dialog,
   DialogContent,
@@ -116,7 +117,7 @@ function DecodeDialog({ entry, open, onClose }: { entry: Entry | null; open: boo
             <div className="flex items-center gap-1.5 text-[10px] text-tertiary">
               <span style={{ color: getSourceColor(entry.source) }}>{entry.sourceIcon} {entry.source}</span>
               <span>·</span>
-              <span>{entry.time}</span>
+              <span>{formatTime(entry.isoDate)}</span>
             </div>
             <button onClick={onClose} className="text-sm" style={{ color: "rgba(255,255,255,0.3)", background: "none", border: "none", font: "inherit", cursor: "pointer" }}>✕</button>
           </div>

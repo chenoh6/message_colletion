@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import type { Entry } from "@/lib/data";
+import type { Entry } from "@/lib/types";
+import { formatTime } from "@/lib/utils";
 
 function formatCount(n: number): string {
   if (n >= 1000) return (n / 1000).toFixed(1).replace(".0", "") + "k";
@@ -35,12 +36,12 @@ export function FeaturedHero({ entry }: { entry: Entry }) {
             <div className="flex items-center gap-2.5 text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
               <span style={{ color: "#c4b5fd", fontWeight: 500 }}>{entry.source}</span>
               <span>·</span>
-              <span>{entry.time}</span>
+              <span>{formatTime(entry.isoDate)}</span>
+            </div>
             </div>
           </div>
-        </div>
 
-        {/* Body */}
+          {/* Body */}
         <div className="px-6 py-4">
           <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
             <strong style={{ color: "rgba(255,255,255,0.85)", fontWeight: 600 }}>AI 导读：</strong>

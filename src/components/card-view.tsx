@@ -3,6 +3,17 @@
 import type { Entry } from "@/lib/types";
 import { getSourceColor } from "@/lib/crypto-data";
 
+/** ISO 日期 → "06/08 10:30" */
+function formatTime(iso?: string): string {
+  if (!iso) return "";
+  try {
+    const d = new Date(iso);
+    return `${String(d.getMonth() + 1).padStart(2, "0")}/${String(d.getDate()).padStart(2, "0")} ${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
+  } catch {
+    return "";
+  }
+}
+
 /* ===== 卡片：单个信息源 ===== */
 function SourceCard({ sourceId, sourceName, sourceIcon, entries, onOpen }: {
   sourceId: string;
@@ -74,6 +85,9 @@ function SourceCard({ sourceId, sourceName, sourceIcon, entries, onOpen }: {
                   {entry.titleCn || entry.title}
                 </div>
                 <div className="flex items-center gap-2 mt-0.5">
+                  <span className="text-[9px]" style={{ color: "rgba(255,255,255,0.25)" }}>
+                    {formatTime(entry.isoDate)}
+                  </span>
                   {entry.aiSummary && (
                     <span className="text-[9px] px-1 py-[1px] rounded-sm"
                       style={{ background: "rgba(124,92,252,0.1)", color: "#a78bfa" }}

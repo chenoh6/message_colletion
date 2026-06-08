@@ -10,6 +10,7 @@ import { TRENDS } from "@/lib/data";
 import { CATEGORIES } from "@/lib/sources";
 import { getSourceColor } from "@/lib/crypto-data";
 import { HighlightedText } from "@/components/term-highlight";
+import { formatTime } from "@/lib/utils";
 import { MarketDashboard } from "@/components/market-dashboard";
 import type { Entry } from "@/lib/types";
 import {
@@ -89,7 +90,7 @@ function DecodeDialog({ entry, open, onClose }: { entry: Entry | null; open: boo
             <div className="flex items-center gap-1.5 text-[10px] text-tertiary">
               <span style={{ color: getSourceColor(entry.source) }}>{entry.sourceIcon} {entry.source}</span>
               <span>·</span>
-              <span>{entry.time}</span>
+              <span>{formatTime(entry.isoDate)}</span>
             </div>
             <button onClick={onClose} className="text-sm" style={{ color: "rgba(255,255,255,0.3)", background: "none", border: "none", font: "inherit", cursor: "pointer" }}>✕</button>
           </div>

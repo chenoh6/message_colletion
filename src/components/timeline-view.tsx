@@ -3,6 +3,21 @@
 import type { Entry } from "@/lib/types";
 import { getSourceColor } from "@/lib/crypto-data";
 
+/** ISO 日期 → 具体时间，如 "06/08 10:30" */
+function formatTime(iso?: string): string {
+  if (!iso) return "";
+  try {
+    const d = new Date(iso);
+    const MM = String(d.getMonth() + 1).padStart(2, "0");
+    const DD = String(d.getDate()).padStart(2, "0");
+    const hh = String(d.getHours()).padStart(2, "0");
+    const mm = String(d.getMinutes()).padStart(2, "0");
+    return `${MM}/${DD} ${hh}:${mm}`;
+  } catch {
+    return "";
+  }
+}
+
 /* ===== 单条时间轴卡片 ===== */
 function TimelineEvent({ entry, index, onOpen, onDecode, decoding }: {
   entry: Entry;
@@ -48,6 +63,7 @@ function TimelineEvent({ entry, index, onOpen, onDecode, decoding }: {
         >
           <div className="flex items-center gap-1.5 text-[10px] mb-0.5">
             <span style={{ color: getSourceColor(entry.source) }}>{entry.sourceIcon} {entry.source}</span>
+            <span className="text-tertiary">{formatTime(entry.isoDate)}</span>
             {hasAi && <span className="text-[8px] px-1 py-[1px] rounded-sm" style={{ background: "rgba(124,92,252,0.12)", color: "#a78bfa" }}>已解析</span>}
             {isHot && <span className="text-[8px] px-1 py-[1px] rounded-sm" style={{ background: "rgba(245,158,11,0.12)", color: "#f59e0b" }}>🔥 热门</span>}
             {isNotable && !isHot && <span className="text-[8px] px-1 py-[1px] rounded-sm" style={{ background: "rgba(124,92,252,0.08)", color: "#a78bfa" }}>值得关注</span>}
