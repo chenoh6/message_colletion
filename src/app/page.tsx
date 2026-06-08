@@ -120,7 +120,7 @@ type ViewMode = "timeline" | "cards";
 export default function HomePage() {
   const [topic, setTopic] = useState("all");
   const [viewMode, setViewMode] = useState<ViewMode>("timeline");
-  const { entries, loading, total } = useEntries({ limit: 50, pollInterval: 0, sortBy: "score" });
+  const { entries, loading, total, refresh } = useEntries({ limit: 50, pollInterval: 15000, sortBy: "score" });
   const { totalEntries } = useFetchStatus();
   const [selectedEntry, setSelectedEntry] = useState<Entry | null>(null);
   const [decodingId, setDecodingId] = useState<string | null>(null);
@@ -153,8 +153,16 @@ export default function HomePage() {
       <div className="flex-1 overflow-y-auto scrollbar-thin px-8 py-6 pb-8 container-page">
         <div className="mb-3 flex items-center gap-3">
           <TopicRow active={topic} counts={topicCounts} onSelect={setTopic} />
+          {/* 刷新按钮 */}
+          <button onClick={() => refresh()}
+            className="flex items-center gap-1 px-2 py-1 rounded-lg text-xs transition-all cursor-pointer flex-shrink-0"
+            style={{ background: "rgba(255,255,255,0.04)", color: "rgba(255,255,255,0.3)" }}
+            title="刷新"
+          >
+            ↻
+          </button>
           {/* 视图切换 */}
-          <div className="flex gap-0.5 p-0.5 rounded-lg border flex-shrink-0 ml-auto"
+          <div className="flex gap-0.5 p-0.5 rounded-lg border flex-shrink-0"
             style={{ background: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.06)" }}
           >
             <button
