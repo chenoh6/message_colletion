@@ -24,6 +24,9 @@ export interface Entry {
   readingTime?: string;
   aiProcessedAt?: string;
   titleCn?: string;      // AI 翻译的中文标题
+  fact?: string;         // 🔍 事实还原（结构化，非字符串解析）
+  judgment?: string;     // 💡 意义判断
+  action?: string;       // 🧭 行动指引
   score?: number;        // 信息价值评分 0-100，由 scorer.ts 计算
 }
 

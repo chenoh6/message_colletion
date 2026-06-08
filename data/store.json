@@ -11398,7 +11398,12 @@
       "time": "28 分钟前",
       "isoDate": "2026-06-08T13:00:00.000Z",
       "category": "crypto",
-      "tags": [],
+      "tags": [
+        "MetaMask",
+        "AI代理",
+        "加密货币钱包",
+        "安全"
+      ],
       "likes": 0,
       "comments": 0,
       "isRead": false,
@@ -11406,7 +11411,10 @@
       "readingTime": "1 分钟",
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📰",
-      "score": 80
+      "score": 80,
+      "aiSummary": "MetaMask发布了一款内置安全功能的AI代理钱包，允许AI代理代表用户执行加密货币交易。这标志着AI代理作为加密市场参与者的趋势加速。\n\n解码分析：\n🔍 事实：MetaMask推出了新的AI代理钱包，内置安全机制，AI代理可以自主执行交易。\n💡 判断：这是加密钱包与AI融合的新尝试，可能提升自动化交易效率，但需关注代理权限管理和私钥安全风险。\n🧭 行动：可关注该产品的用户反馈和安全审计结果，暂不急于使用。跟踪指标：钱包的漏洞报告、用户增长数据。",
+      "titleCn": "MetaMask推出内置安全功能的AI代理钱包，用于加密货币交易",
+      "aiProcessedAt": "2026-06-08T13:46:07.973Z"
     },
     "1a8708a7-fa0c-4fa3-be98-4ef9993dec49": {
       "id": "1a8708a7-fa0c-4fa3-be98-4ef9993dec49",

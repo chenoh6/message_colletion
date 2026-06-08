@@ -82,24 +82,22 @@ function CategoryFilter({ value, onChange }: { value: string; onChange: (v: stri
 /* ---------- 解码弹窗 ---------- */
 function DecodeDialog({ entry, open, onClose }: { entry: Entry | null; open: boolean; onClose: () => void }) {
   if (!entry) return null;
-  const raw = entry.aiSummary || "";
-  let contentSummary = entry.summary || "";
-  let factText = "", judgmentText = "", actionText = "";
 
-  const factIdx = raw.indexOf("🔍");
-  const judgmentIdx = raw.indexOf("💡");
-  const actionIdx = raw.indexOf("🧭");
+  // 结构化字段优先
+  let factText = entry.fact || "";
+  let judgmentText = entry.judgment || "";
+  let actionText = entry.action || "";
 
-  if (factIdx > -1) contentSummary = raw.slice(0, factIdx).replace(/解码分析[：:]\s*/g, "").trim();
-  else contentSummary = raw || entry.summary || "";
-
-  if (factIdx > -1 && judgmentIdx > -1) factText = raw.slice(factIdx, judgmentIdx).replace(/^🔍\s*事实[：:]\s*/g, "").trim();
-  else if (factIdx > -1) factText = raw.slice(factIdx).replace(/^🔍\s*事实[：:]\s*/g, "").trim();
-
-  if (judgmentIdx > -1 && actionIdx > -1) judgmentText = raw.slice(judgmentIdx, actionIdx).replace(/^💡\s*(判断|意义)[：:]\s*/g, "").trim();
-  else if (judgmentIdx > -1) judgmentText = raw.slice(judgmentIdx).replace(/^💡\s*(判断|意义)[：:]\s*/g, "").trim();
-
-  if (actionIdx > -1) actionText = raw.slice(actionIdx).replace(/^🧭\s*(行动|行动指引)[：:]\s*/g, "").trim();
+  // 兼容旧数据
+  if (!factText && !judgmentText && !actionText && entry.aiSummary) {
+    const raw = entry.aiSummary;
+    const factIdx = raw.indexOf("🔍");
+    const judgmentIdx = raw.indexOf("💡");
+    const actionIdx = raw.indexOf("🧭");
+    if (factIdx > -1 && judgmentIdx > -1) factText = raw.slice(factIdx, judgmentIdx).replace(/^🔍\s*事实[：:]\s*/g, "").trim();
+    if (judgmentIdx > -1 && actionIdx > -1) judgmentText = raw.slice(judgmentIdx, actionIdx).replace(/^💡\s*(判断|意义)[：:]\s*/g, "").trim();
+    if (actionIdx > -1) actionText = raw.slice(actionIdx).replace(/^🧭\s*(行动|行动指引)[：:]\s*/g, "").trim();
+  }
 
   if (!factText) factText = "这条信息提供了关于 " + entry.source + " 的最新动态。";
   if (!judgmentText) judgmentText = "值得关注，但需要结合更多信息综合判断。";
@@ -122,9 +120,6 @@ function DecodeDialog({ entry, open, onClose }: { entry: Entry | null; open: boo
             <button onClick={onClose} className="text-sm" style={{ color: "rgba(255,255,255,0.3)", background: "none", border: "none", font: "inherit", cursor: "pointer" }}>✕</button>
           </div>
           <h2 className="text-base font-bold leading-snug mb-3"><HighlightedText text={entry.titleCn || entry.title} /></h2>
-          {contentSummary && (
-            <div className="text-xs leading-relaxed text-dim mb-4 p-3 rounded-lg" style={{ background: "rgba(255,255,255,0.03)" }}>{contentSummary}</div>
-          )}
           <div className="rounded-lg p-3 mb-2" style={{ background: "rgba(59,130,246,0.06)" }}>
             <div className="flex items-center gap-1.5 text-xs font-semibold mb-1" style={{ color: "#60a5fa" }}>🔍 事实还原</div>
             <p className="text-xs leading-relaxed text-dim">{factText}</p>
