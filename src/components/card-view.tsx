@@ -73,10 +73,7 @@ function SourceCard({ sourceId, sourceName, sourceIcon, entries, onOpen }: {
                 <div className="text-xs font-medium leading-snug line-clamp-2">
                   {entry.titleCn || entry.title}
                 </div>
-                <div className="flex items-center gap-2 mt-1">
-                  <span className="text-[10px]" style={{ color: "rgba(255,255,255,0.25)" }}>
-                    {entry.time}
-                  </span>
+                <div className="flex items-center gap-2 mt-0.5">
                   {entry.aiSummary && (
                     <span className="text-[9px] px-1 py-[1px] rounded-sm"
                       style={{ background: "rgba(124,92,252,0.1)", color: "#a78bfa" }}

@@ -92,8 +92,6 @@ function TimelineEvent({ entry, index, onOpen, onDecode, decoding }: {
         >
           <div className="flex items-center gap-1.5 text-[10px] mb-0.5">
             <span style={{ color: getSourceColor(entry.source) }}>{entry.sourceIcon} {entry.source}</span>
-            <span className="text-tertiary">·</span>
-            <span className="text-tertiary">{entry.time}</span>
             {hasAi && <span className="text-[8px] px-1 py-[1px] rounded-sm" style={{ background: "rgba(124,92,252,0.12)", color: "#a78bfa" }}>已解析</span>}
             {isHot && <span className="text-[8px] px-1 py-[1px] rounded-sm" style={{ background: "rgba(245,158,11,0.12)", color: "#f59e0b" }}>🔥 热门</span>}
             {isNotable && !isHot && <span className="text-[8px] px-1 py-[1px] rounded-sm" style={{ background: "rgba(124,92,252,0.08)", color: "#a78bfa" }}>值得关注</span>}
