@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
-import { TIER1_SOURCES, SOURCES } from "@/lib/sources";
+import { SOURCES } from "@/lib/sources";
 import { fetchSource } from "@/lib/fetcher";
 import { saveEntries, markFetched, shouldFetch, addFetchLog, getStore } from "@/lib/store";
 import { processEntries } from "@/lib/ai-processor";
+import { getEnabledSources, getEnabledTier1Sources } from "@/lib/source-settings";
 
 export const maxDuration = 120; // 2 minutes
 
@@ -40,20 +41,22 @@ export async function GET(request: Request) {
   // Status check if no source specified
   if (!sourceId) {
     const store = await getStore();
-    const statuses = SOURCES.filter((s) => s.active).map((s) => ({
+    const enabledSources = await getEnabledSources();
+    const statuses = enabledSources.map((s) => ({
       id: s.id,
       name: s.name,
       tier: s.tier,
       interval: s.interval,
       lastFetched: store.lastFetched[s.id] || null,
-      needsFetch: force || null, // can't compute shouldFetch without await inside map
+      needsFetch: force || null,
     }));
     const totalEntries = Object.keys(store.entries).length;
     return NextResponse.json({ status: "ok", sources: statuses, totalEntries });
   }
 
   // Fetch single source
-  const source = SOURCES.find((s) => s.id === sourceId);
+  const enabledSources = await getEnabledSources();
+  const source = enabledSources.find((s) => s.id === sourceId) || SOURCES.find((s) => s.id === sourceId);
   if (!source) {
     return NextResponse.json({ error: `Source "${sourceId}" not found` }, { status: 404 });
   }
@@ -107,9 +110,10 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
-  // Fetch ALL tier 1 sources
+  // Fetch ALL enabled tier 1 sources
+  const tier1Sources = await getEnabledTier1Sources();
   const results = [];
-  for (const source of TIER1_SOURCES) {
+  for (const source of tier1Sources) {
     const needed = await shouldFetch(source);
     if (!needed) {
       results.push({ id: source.id, name: source.name, skipped: true });

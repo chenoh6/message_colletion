@@ -1,19 +1,15 @@
-import { TIER1_SOURCES, SOURCES } from "./sources";
 import { fetchSource } from "./fetcher";
 import { saveEntries, markFetched, shouldFetch, addFetchLog, getStore } from "./store";
 import { processEntries } from "./ai-processor";
+import { getEnabledSources, getEnabledTier1Sources } from "./source-settings";
+import type { SourceConfig } from "./types";
 
 let isRunning = false;
 let intervalHandle: ReturnType<typeof setInterval> | null = null;
 
-async function processSource(sourceId: string, force = false) {
-  const source = SOURCES.find((s) => s.id === sourceId);
-  if (!source || !source.active) return;
-
-  if (!force) {
-    const needed = await shouldFetch(source);
-    if (!needed) return;
-  }
+async function processSource(source: SourceConfig) {
+  const needed = await shouldFetch(source);
+  if (!needed) return;
 
   console.log(`[Scheduler] Fetching ${source.name}...`);
   const result = await fetchSource(source);
@@ -36,7 +32,7 @@ async function processSource(sourceId: string, force = false) {
     sourceId: source.id,
     sourceName: source.name,
     entries: result.entries.length,
-    newEntries: result.entries.length, // approximate
+    newEntries: result.entries.length,
     error: result.error,
   });
 
@@ -48,13 +44,13 @@ async function processSource(sourceId: string, force = false) {
 }
 
 async function tick() {
-  if (isRunning) return; // prevent overlapping ticks
+  if (isRunning) return;
   isRunning = true;
 
   try {
-    const activeSources = SOURCES.filter((s) => s.active);
+    const activeSources = await getEnabledSources();
     for (const source of activeSources) {
-      await processSource(source.id, false);
+      await processSource(source);
     }
   } catch (err) {
     console.error("[Scheduler] Tick error:", err);
@@ -64,14 +60,15 @@ async function tick() {
 }
 
 export async function startScheduler() {
-  if (intervalHandle) return; // already started
+  if (intervalHandle) return;
 
   console.log("[Scheduler] Starting...");
 
-  // 1. Initial burst: fetch all Tier 1 sources immediately
+  // 1. Initial burst: fetch all enabled Tier 1 sources
   console.log("[Scheduler] Initial fetch of Tier 1 sources...");
-  for (const source of TIER1_SOURCES) {
-    await processSource(source.id, true);
+  const tier1Sources = await getEnabledTier1Sources();
+  for (const source of tier1Sources) {
+    await processSource(source);
   }
 
   // 2. Refresh store counts

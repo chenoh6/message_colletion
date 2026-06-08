@@ -40,6 +40,7 @@ export interface SourceConfig {
   aiTranslate: boolean;
   aiPriority: 'high' | 'normal' | 'low';
   active: boolean;
+  description?: string;   // 信息源简介，用于 UI 展示
 }
 
 export interface Trend {
