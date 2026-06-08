@@ -16,6 +16,8 @@ const STOCK_SOURCES: SourceConfig[] = [
     aiTranslate: false,
     aiPriority: "high",
     active: true,
+    hotness: "niche",
+    description: "投资者社区，散户讨论和个股分析丰富",
   },
   {
     id: "cls-cn",
@@ -45,6 +47,8 @@ const STOCK_SOURCES: SourceConfig[] = [
     aiTranslate: false,
     aiPriority: "high",
     active: true,
+    hotness: "quality",
+    description: "专业财经媒体，深度调查报道权威",
   },
   {
     id: "yicai",
@@ -59,6 +63,8 @@ const STOCK_SOURCES: SourceConfig[] = [
     aiTranslate: false,
     aiPriority: "high",
     active: true,
+    hotness: "quality",
+    description: "主流财经媒体，覆盖宏观和市场资讯",
   },
   {
     id: "eastmoney",
@@ -73,6 +79,8 @@ const STOCK_SOURCES: SourceConfig[] = [
     aiTranslate: false,
     aiPriority: "high",
     active: true,
+    hotness: "hot",
+    description: "A股最大财经门户，行情资讯全覆盖",
   },
   {
     id: "fin-zh",
@@ -87,6 +95,8 @@ const STOCK_SOURCES: SourceConfig[] = [
     aiTranslate: false,
     aiPriority: "high",
     active: true,
+    hotness: "hot",
+    description: "老牌财经门户，覆盖面广更新快",
   },
   // ===== 美股 / 国际 =====
   {
@@ -116,6 +126,8 @@ const STOCK_SOURCES: SourceConfig[] = [
     aiTranslate: true,
     aiPriority: "high",
     active: true,
+    hotness: "quality",
+    description: "全球顶级财经通讯社，时效性第一",
   },
   {
     id: "investing",

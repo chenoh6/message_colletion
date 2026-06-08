@@ -2,6 +2,7 @@ import { fetchSource } from "./fetcher";
 import { saveEntries, markFetched, shouldFetch, addFetchLog, getStore } from "./store";
 import { processEntries } from "./ai-processor";
 import { getEnabledSources, getEnabledTier1Sources } from "./source-settings";
+import { isAiEnabled } from "./settings";
 import type { SourceConfig } from "./types";
 
 let isRunning = false;
@@ -17,7 +18,8 @@ async function processSource(source: SourceConfig) {
   if (result.entries.length > 0) {
     const newCount = await saveEntries(result.entries);
 
-    if (newCount > 0 && process.env.DEEPSEEK_API_KEY) {
+    const aiOk = await isAiEnabled();
+    if (aiOk && newCount > 0 && process.env.DEEPSEEK_API_KEY) {
       const newEntries = result.entries.slice(0, newCount);
       const processed = await processEntries(newEntries);
       for (const entry of processed) {

@@ -36,6 +36,14 @@ const TIER_LABELS: Record<number, { label: string; color: string }> = {
   3: { label: "长尾", color: "rgba(255,255,255,0.3)" },
 };
 
+const HOTNESS_LABELS: Record<string, { label: string; icon: string; color: string }> = {
+  hot: { label: "热门", icon: "🔥", color: "#f59e0b" },
+  quality: { label: "优质", icon: "⭐", color: "#a78bfa" },
+  niche: { label: "垂直", icon: "🎯", color: "#2dd4bf" },
+  deep: { label: "深度", icon: "💎", color: "#60a5fa" },
+  newsflash: { label: "快讯", icon: "⚡", color: "#f87171" },
+};
+
 /* ===== 分类：紧凑卡片网格 ===== */
 function CategoryCard({
   cat,
@@ -106,6 +114,13 @@ function CategoryCard({
                 >
                   {TIER_LABELS[source.tier].label}
                 </span>
+                {(source as any).hotness && HOTNESS_LABELS[(source as any).hotness] && (
+                  <span className="text-[9px] px-1 py-[0.5px] rounded-sm font-medium"
+                    style={{ background: HOTNESS_LABELS[(source as any).hotness].color + "18", color: HOTNESS_LABELS[(source as any).hotness].color }}
+                  >
+                    {HOTNESS_LABELS[(source as any).hotness].icon} {HOTNESS_LABELS[(source as any).hotness].label}
+                  </span>
+                )}
                 <span className="text-[9px]" style={{ color: "rgba(255,255,255,0.2)" }}>
                   {source.interval < 60 ? `${source.interval}min` : `${source.interval / 60}h`}
                 </span>

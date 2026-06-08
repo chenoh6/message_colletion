@@ -78,7 +78,13 @@ function TimelineEvent({ entry, index, onOpen, onDecode, decoding }: {
             {isNotable && !isHot && <span className="text-[8px] px-1 py-[1px] rounded-sm" style={{ background: "rgba(124,92,252,0.08)", color: "#a78bfa" }}>值得关注</span>}
           </div>
           <h4 className="text-sm font-semibold leading-snug line-clamp-1">{entry.titleCn || entry.title}</h4>
-          {(entry.aiSummary || entry.summary) && (
+          {entry.oneLiner && (
+            <p className="text-xs mt-1 line-clamp-1 flex items-start gap-1">
+              <span className="text-[9px] px-1 py-[1px] rounded-sm flex-shrink-0 mt-[2px]" style={{ background: "rgba(124,92,252,0.12)", color: "#a78bfa" }}>AI</span>
+              <span style={{ color: "rgba(255,255,255,0.5)" }}>{entry.oneLiner}</span>
+            </p>
+          )}
+          {(entry.aiSummary || entry.summary) && !entry.oneLiner && (
             <p className="text-xs text-dim mt-1 line-clamp-1">{entry.aiSummary || entry.summary}</p>
           )}
         </div>

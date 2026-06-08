@@ -4,6 +4,7 @@ import { fetchSource } from "@/lib/fetcher";
 import { saveEntries, markFetched, addFetchLog } from "@/lib/store";
 import { processEntries } from "@/lib/ai-processor";
 import { SOURCES } from "@/lib/sources";
+import { isAiEnabled } from "@/lib/settings";
 import type { SourceConfig } from "@/lib/types";
 
 /**
@@ -106,7 +107,8 @@ async function triggerFetch(source: SourceConfig) {
   const result = await fetchSource(source);
   if (result.entries.length > 0) {
     const newCount = await saveEntries(result.entries);
-    if (newCount > 0 && process.env.DEEPSEEK_API_KEY) {
+    const aiOk = await isAiEnabled();
+    if (aiOk && newCount > 0 && process.env.DEEPSEEK_API_KEY) {
       const processed = await processEntries(result.entries.slice(0, newCount));
       for (const entry of processed) {
         await saveEntries([entry]);

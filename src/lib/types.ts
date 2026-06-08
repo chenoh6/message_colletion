@@ -1,3 +1,5 @@
+export type Hotness = "hot" | "quality" | "niche" | "deep" | "newsflash";
+
 export interface Entry {
   id: string;
   title: string;
@@ -23,11 +25,12 @@ export interface Entry {
   badge?: { label: string; type: 'hot' | 'new' | 'exclusive' };
   readingTime?: string;
   aiProcessedAt?: string;
-  titleCn?: string;      // AI 翻译的中文标题
-  fact?: string;         // 🔍 事实还原（结构化，非字符串解析）
-  judgment?: string;     // 💡 意义判断
-  action?: string;       // 🧭 行动指引
-  score?: number;        // 信息价值评分 0-100，由 scorer.ts 计算
+  titleCn?: string;         // AI 翻译的中文标题
+  oneLiner?: string;        // AI 一句话中文总结（在标题下展示）
+  fact?: string;            // 🔍 事实还原
+  judgment?: string;        // 💡 意义判断
+  action?: string;          // 🧭 行动指引
+  score?: number;           // 信息价值评分 0-100
 }
 
 export interface SourceConfig {
@@ -43,7 +46,8 @@ export interface SourceConfig {
   aiTranslate: boolean;
   aiPriority: 'high' | 'normal' | 'low';
   active: boolean;
-  description?: string;   // 信息源简介，用于 UI 展示
+  description?: string;    // 一句话特点
+  hotness?: Hotness;       // 热门程度
 }
 
 export interface Trend {

@@ -4,6 +4,7 @@ import { fetchSource } from "@/lib/fetcher";
 import { saveEntries, markFetched, shouldFetch, addFetchLog, getStore } from "@/lib/store";
 import { processEntries } from "@/lib/ai-processor";
 import { getEnabledSources, getEnabledTier1Sources } from "@/lib/source-settings";
+import { isAiEnabled } from "@/lib/settings";
 
 export const maxDuration = 120; // 2 minutes
 
@@ -78,9 +79,10 @@ export async function GET(request: Request) {
     newCount = await saveEntries(result.entries);
   }
 
-  // AI process (first pass — only new entries, with API key check)
+  // AI process (仅当设置开启 + 有 API key)
   let aiProcessed = 0;
-  if (runAi && newCount > 0 && process.env.DEEPSEEK_API_KEY) {
+  const aiEnabled = await isAiEnabled();
+  if (runAi && aiEnabled && newCount > 0 && process.env.DEEPSEEK_API_KEY) {
     // Get the newly saved entries
     const newEntries = result.entries.slice(0, newCount);
     const processed = await processEntries(newEntries);
@@ -126,7 +128,8 @@ export async function POST(request: Request) {
       newCount = await saveEntries(result.entries);
     }
 
-    if (newCount > 0 && process.env.DEEPSEEK_API_KEY) {
+    const aiEnabledPost = await isAiEnabled();
+    if (aiEnabledPost && newCount > 0 && process.env.DEEPSEEK_API_KEY) {
       const newEntries = result.entries.slice(0, newCount);
       const processed = await processEntries(newEntries);
       for (const entry of processed) {

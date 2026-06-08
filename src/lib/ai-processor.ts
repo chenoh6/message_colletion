@@ -11,11 +11,12 @@ const AI_MODEL = () => process.env.AI_MODEL || "deepseek-chat";
  * 来源: 信息解码大师.md — 三段式：事实还原 → 意义判断 → 行动指引
  * 输出为结构化 JSON，不再混在 summary 字符串里用 emoji 切分
  */
-const AI_DECODE_PROMPT = `你是一个信息解码大师。你的任务是把一条信息拆解为三段式输出，并把英文标题翻译成中文。
+const AI_DECODE_PROMPT = `你是一个信息解码大师。你的任务是把一条信息拆解为三段式输出，把英文标题翻译成中文，并生成一句话总结。
 
 请返回以下格式的 JSON（只返回纯 JSON，不要 markdown 代码块）：
 {
   "titleCn": "中文标题（如果原文是英文标题则翻译成中文，如果原文已是中文则保持不变）",
+  "oneLiner": "一句话中文总结（≤30字，说清楚这条信息最核心的内容）",
   "fact": "🔍 事实还原：发生了什么？谁说的？什么时候？只用名词+动词，不评价",
   "judgment": "💡 意义判断：为什么重要？影响谁？市场会怎么解读？区分事实/预期/观点",
   "action": "🧭 行动指引：要不要行动？不动的话盯什么？信息不够就说「不构成行动依据」",
@@ -25,6 +26,7 @@ const AI_DECODE_PROMPT = `你是一个信息解码大师。你的任务是把一
 
 输出规则：
 - titleCn 必须返回中文标题
+- oneLiner 是用中文一句话概括核心信息，不超过30字
 - fact / judgment / action 都用中文输出
 - 如果是币圈/加密内容，分类设为 crypto
 - 不够就说不够，不要硬给建议
@@ -97,6 +99,7 @@ function fallbackParseOldFormat(aiSummary: string): { fact?: string; judgment?: 
 
 async function processEntry(entry: Entry): Promise<{
   aiSummary: string;
+  oneLiner?: string;
   fact?: string;
   judgment?: string;
   action?: string;
@@ -126,6 +129,7 @@ async function processEntry(entry: Entry): Promise<{
     if (parsed.fact || parsed.judgment || parsed.action) {
       return {
         aiSummary: [parsed.fact, parsed.judgment, parsed.action].filter(Boolean).join("\n\n") || entry.summary || entry.title,
+        oneLiner: parsed.oneLiner || undefined,
         fact: parsed.fact || undefined,
         judgment: parsed.judgment || undefined,
         action: parsed.action || undefined,
@@ -169,14 +173,14 @@ async function processEntry(entry: Entry): Promise<{
 export async function processEntries(entries: Entry[]): Promise<Entry[]> {
   if (!entries.length) return [];
 
-  const batch = entries.slice(0, 10);
-  console.log(`[AI] Processing ${batch.length}/${entries.length} entries with DeepSeek...`);
+  const batchSize = Math.min(entries.length, 20);
+  console.log(`[AI] Processing ${batchSize}/${entries.length} entries with DeepSeek...`);
 
   const concurrency = 3;
   const results: Entry[] = [];
 
-  for (let i = 0; i < batch.length; i += concurrency) {
-    const chunk = batch.slice(i, i + concurrency);
+  for (let i = 0; i < batchSize; i += concurrency) {
+    const chunk = entries.slice(i, i + concurrency);
     const processed = await Promise.all(
       chunk.map(async (entry) => {
         const result = await processEntry(entry);

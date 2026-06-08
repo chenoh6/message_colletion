@@ -18,6 +18,7 @@ export default function ProfilePage() {
   const [apiModel, setApiModel] = useState("deepseek-v4-flash");
   const [apiUrl, setApiUrl] = useState("https://api.deepseek.com/chat/completions");
   const [fetchEnabled, setFetchEnabled] = useState(false);
+  const [aiEnabled, setAiEnabled] = useState(true);
   const [saved, setSaved] = useState(false);
   const [reprocessing, setReprocessing] = useState(false);
   const [reprocessResult, setReprocessResult] = useState("");
@@ -31,6 +32,8 @@ export default function ProfilePage() {
     if (storedModel) setApiModel(storedModel);
     if (storedUrl) setApiUrl(storedUrl);
     setFetchEnabled(storedFetch === "true");
+    // 加载 AI 设置
+    fetch("/api/settings").then((r) => r.json()).then((d) => setAiEnabled(d.aiEnabled ?? true)).catch(() => {});
   }, []);
 
   const saveConfig = () => {
@@ -50,6 +53,16 @@ export default function ProfilePage() {
     } else {
       await fetch("/api/scheduler", { method: "POST", body: JSON.stringify({ action: "stop" }) });
     }
+  };
+
+  const toggleAi = async () => {
+    const next = !aiEnabled;
+    setAiEnabled(next);
+    await fetch("/api/settings", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ aiEnabled: next }),
+    });
   };
 
   const handleReprocess = async () => {
@@ -101,6 +114,24 @@ export default function ProfilePage() {
             >
               <span className="absolute top-0.5 w-5 h-5 rounded-full bg-white transition-all"
                 style={{ left: fetchEnabled ? "calc(100% - 22px)" : "2px" }} />
+            </button>
+          </div>
+        </div>
+
+        {/* AI 解析开关 */}
+        <div className="glass rounded-xl p-5 mb-6">
+          <h3 className="text-sm font-semibold mb-4 flex items-center gap-1.5">🤖 AI 解析</h3>
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm font-medium">采集时自动翻译 + 一句话总结 + 三段式解码</p>
+              <p className="text-xs mt-0.5 text-dim">关闭后只采集原始内容，不调用 AI</p>
+            </div>
+            <button onClick={toggleAi}
+              className="relative w-12 h-6 rounded-full transition-all cursor-pointer"
+              style={{ background: aiEnabled ? "#7c5cfc" : "rgba(255,255,255,0.15)" }}
+            >
+              <span className="absolute top-0.5 w-5 h-5 rounded-full bg-white transition-all"
+                style={{ left: aiEnabled ? "calc(100% - 22px)" : "2px" }} />
             </button>
           </div>
         </div>
