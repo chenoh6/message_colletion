@@ -29,7 +29,8 @@ const STOCK_SOURCES: SourceConfig[] = [
     interval: 30,
     aiTranslate: false,
     aiPriority: "high",
-    active: true,
+    active: false,
+    description: "⚠️ RSS已失效，待修复",
   },
   {
     id: "caixin",
@@ -244,7 +245,8 @@ const CRYPTO_SOURCES: SourceConfig[] = [
     interval: 30,
     aiTranslate: true,
     aiPriority: "high",
-    active: true,
+    active: false,
+    description: "⚠️ RSS已失效（404），待修复",
   },
   {
     id: "decrypt",
@@ -307,18 +309,19 @@ const CRYPTO_SOURCES: SourceConfig[] = [
 export const SOURCES: SourceConfig[] = [
   // ===== Tier 1 =====
   {
-    id: "jiqizhixin",
-    name: "机器之心",
-    url: "https://www.jiqizhixin.com/rss",
+    id: "tmtpost",
+    name: "钛媒体",
+    url: "https://www.tmtpost.com/rss",
     type: "rss",
     category: "ai",
-    icon: "🤖",
+    icon: "🔬",
     lang: "zh",
     tier: 1,
-    interval: 15,
+    interval: 30,
     aiTranslate: false,
     aiPriority: "high",
     active: true,
+    description: "深度商业科技媒体，替代机器之心（原RSS已失效）",
   },
   {
     id: "qbitai",
