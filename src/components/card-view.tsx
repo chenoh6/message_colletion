@@ -95,7 +95,7 @@ function SourceCard({ sourceId, sourceName, sourceIcon, entries, onOpen }: {
                   <span className="text-[9px]" style={{ color: "rgba(255,255,255,0.25)" }}>
                     {entry.time}
                   </span>
-                  {entry.aiSummary && (
+                  {entry.oneLiner && (
                     <span className="text-[9px] px-1 py-[1px] rounded-sm"
                       style={{ background: "rgba(124,92,252,0.1)", color: "#a78bfa" }}
                     >

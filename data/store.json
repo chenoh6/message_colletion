@@ -4760,6 +4760,19 @@
       "sourceName": "钛媒体",
       "entries": 19,
       "newEntries": 19
+    },
+    {
+      "sourceId": "xueqiu",
+      "sourceName": "雪球",
+      "entries": 0,
+      "newEntries": 0,
+      "error": "read ECONNRESET"
+    },
+    {
+      "sourceId": "ft-china",
+      "sourceName": "FT中文网",
+      "entries": 20,
+      "newEntries": 20
     }
   ],
   "lastFetched": {
@@ -4772,8 +4785,8 @@
     "36kr": "2026-06-08T15:08:52.053Z",
     "techcrunch": "2026-06-08T14:41:48.027Z",
     "hacker-news": "2026-06-08T14:42:12.703Z",
-    "xueqiu": "2026-06-08T14:47:43.980Z",
-    "ft-china": "2026-06-08T14:48:09.018Z",
+    "xueqiu": "2026-06-08T15:18:20.977Z",
+    "ft-china": "2026-06-08T15:18:25.334Z",
     "bitcoinmagazine": "2026-06-08T14:47:56.262Z",
     "coindesk": "2026-06-08T14:49:44.697Z",
     "eastmoney": "2026-06-08T15:08:42.200Z",

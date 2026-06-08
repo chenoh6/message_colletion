@@ -26,7 +26,7 @@ function TimelineEvent({ entry, index, onOpen, onDecode, decoding }: {
   onDecode: (e: Entry) => void;
   decoding: boolean;
 }) {
-  const hasAi = !!entry.aiSummary;
+  const hasAi = !!entry.oneLiner && !!entry.fact;
   const sourceColor = getSourceColor(entry.source);
 
   // 评分标记
