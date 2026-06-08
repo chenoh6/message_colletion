@@ -240,7 +240,10 @@
       "readingTime": "9 分钟",
       "coverGradient": "from-[#7c5cfc]/20 to-[#f472b6]/10",
       "coverEmoji": "📐",
-      "score": 82
+      "score": 82,
+      "aiSummary": "This is today’s edition of The Download, our weekday newsletter that provides a daily dose of what’s going on in the world of technology.",
+      "titleCn": "The Download: how the World Cup ball will fly and OpenAI’s “super app”",
+      "aiProcessedAt": "2026-06-08T14:58:42.862Z"
     },
     "3771e473-fb11-4904-ac27-007ba90f6bce": {
       "id": "3771e473-fb11-4904-ac27-007ba90f6bce",
@@ -2872,7 +2875,12 @@
       "time": "10 分钟前",
       "isoDate": "2026-06-08T14:37:27.000Z",
       "category": "crypto",
-      "tags": [],
+      "tags": [
+        "比特币",
+        "通胀",
+        "ETF",
+        "10xResearch"
+      ],
       "likes": 0,
       "comments": 0,
       "isRead": false,
@@ -2880,7 +2888,14 @@
       "readingTime": "1 分钟",
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📰",
-      "score": 67
+      "score": 67,
+      "aiSummary": "10xResearch分析师Markus Thielen指出，4月美国通胀数据火热引发ETF抛售，是比特币走弱主因，反弹取决于周三CPI数据。\n\n该观点将市场焦点从单一公司风险转向宏观通胀因素，若CPI低于预期可能触发反弹，反之将承压，影响加密市场短期情绪。\n\n关注周三CPI数据公布，若超预期则BTC可能继续下行；数据未出前不构成行动依据。",
+      "oneLiner": "通胀导致比特币下跌，ETF抛售是主因",
+      "fact": "10xResearch分析师Markus Thielen指出，4月美国通胀数据火热引发ETF抛售，是比特币走弱主因，反弹取决于周三CPI数据。",
+      "judgment": "该观点将市场焦点从单一公司风险转向宏观通胀因素，若CPI低于预期可能触发反弹，反之将承压，影响加密市场短期情绪。",
+      "action": "关注周三CPI数据公布，若超预期则BTC可能继续下行；数据未出前不构成行动依据。",
+      "titleCn": "10xResearch：比特币下跌归咎于通胀上升，而非微策略",
+      "aiProcessedAt": "2026-06-08T14:55:38.879Z"
     },
     "3b579c40-4cf8-40a9-b23c-54b9a9488d6a": {
       "id": "3b579c40-4cf8-40a9-b23c-54b9a9488d6a",
@@ -2894,7 +2909,13 @@
       "time": "1 小时前",
       "isoDate": "2026-06-08T13:12:12.000Z",
       "category": "crypto",
-      "tags": [],
+      "tags": [
+        "加密货币",
+        "NEAR",
+        "TAO",
+        "CoinDesk20",
+        "市场更新"
+      ],
       "likes": 0,
       "comments": 0,
       "isRead": false,
@@ -2902,7 +2923,14 @@
       "readingTime": "1 分钟",
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📰",
-      "score": 62
+      "score": 62,
+      "aiSummary": "🔍 CoinDesk 20指数更新显示，NEAR涨幅12.3%，TAO涨12%，几乎所有资产交易走高。消息来自CoinDesk，更新时间为当前。\n\n💡 意义判断：NEAR和TAO强势领涨表明资金流入特定公链和AI赛道，市场情绪偏积极。短期可能推动相关代币跟涨，但需观察持续性。\n\n🧭 不构成直接行动依据。可关注NEAR和TAO的技术面突破信号，或等待更明确的趋势确认。",
+      "oneLiner": "CoinDesk 20指数多数资产上涨，NEAR和TAO领涨超12%。",
+      "fact": "🔍 CoinDesk 20指数更新显示，NEAR涨幅12.3%，TAO涨12%，几乎所有资产交易走高。消息来自CoinDesk，更新时间为当前。",
+      "judgment": "💡 意义判断：NEAR和TAO强势领涨表明资金流入特定公链和AI赛道，市场情绪偏积极。短期可能推动相关代币跟涨，但需观察持续性。",
+      "action": "🧭 不构成直接行动依据。可关注NEAR和TAO的技术面突破信号，或等待更明确的趋势确认。",
+      "titleCn": "CoinDesk 20指数更新：NEAR上涨12.3%领涨，几乎所有资产走高",
+      "aiProcessedAt": "2026-06-08T15:03:08.075Z"
     },
     "a2b82a9d-e255-4b5b-b21e-c4faa15b7c1b": {
       "id": "a2b82a9d-e255-4b5b-b21e-c4faa15b7c1b",
@@ -2916,7 +2944,12 @@
       "time": "1 小时前",
       "isoDate": "2026-06-08T13:00:00.000Z",
       "category": "crypto",
-      "tags": [],
+      "tags": [
+        "MetaMask",
+        "AI代理",
+        "加密钱包",
+        "安全"
+      ],
       "likes": 0,
       "comments": 0,
       "isRead": false,
@@ -2924,7 +2957,14 @@
       "readingTime": "1 分钟",
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📰",
-      "score": 65
+      "score": 65,
+      "aiSummary": "🔍 事实还原：MetaMask发布了一个专为AI代理设计的钱包，内置安全功能，用于执行加密货币交易。AI代理正越来越多地参与加密市场，代表用户执行交易和管理资本。\n\n💡 意义判断：此举表明加密行业正适应AI代理的兴起，将自主交易体纳入钱包生态。内置安全功能可降低代理钱包被盗风险，可能推动更多用户和机构采用AI代理进行链上操作。对竞争对手如Rabby Wallet等形成压力，加速钱包赛道安全创新。\n\n🧭 行动指引：不构成直接行动依据。可关注MetaMask后续对AI代理钱包的开放程度及安全审计报告，跟踪其他钱包是否跟进同类功能。",
+      "oneLiner": "MetaMask推出AI代理钱包，内置安全功能",
+      "fact": "🔍 事实还原：MetaMask发布了一个专为AI代理设计的钱包，内置安全功能，用于执行加密货币交易。AI代理正越来越多地参与加密市场，代表用户执行交易和管理资本。",
+      "judgment": "💡 意义判断：此举表明加密行业正适应AI代理的兴起，将自主交易体纳入钱包生态。内置安全功能可降低代理钱包被盗风险，可能推动更多用户和机构采用AI代理进行链上操作。对竞争对手如Rabby Wallet等形成压力，加速钱包赛道安全创新。",
+      "action": "🧭 行动指引：不构成直接行动依据。可关注MetaMask后续对AI代理钱包的开放程度及安全审计报告，跟踪其他钱包是否跟进同类功能。",
+      "titleCn": "MetaMask推出内置安全功能的AI代理钱包用于加密货币交易",
+      "aiProcessedAt": "2026-06-08T15:03:06.612Z"
     },
     "763afe6b-bdcd-4d72-9f9d-7f0a4c3a7251": {
       "id": "763afe6b-bdcd-4d72-9f9d-7f0a4c3a7251",
@@ -2938,7 +2978,11 @@
       "time": "1 小时前",
       "isoDate": "2026-06-08T12:53:30.000Z",
       "category": "crypto",
-      "tags": [],
+      "tags": [
+        "以太坊",
+        "机构买入",
+        "抄底"
+      ],
       "likes": 0,
       "comments": 0,
       "isRead": false,
@@ -2946,7 +2990,14 @@
       "readingTime": "1 分钟",
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📰",
-      "score": 65
+      "score": 65,
+      "aiSummary": "🔍 事实还原：Bitmine公司上周购买了126,971枚ETH，价值约2.14亿美元。董事长Tom Lee此前曾呼吁放缓购买，但公司仍进行了这次2026年最大规模买入。\n\n💡 意义判断：此举显示公司对以太坊长期价值的信心，无视短期价格下跌和内部谨慎意见。可能被市场视为抄底信号，影响其他机构决策。\n\n🧭 行动指引：不构成行动依据。若关注ETH，可观察其他大机构是否跟进买入，以及市场对Bitmine行为的反应。",
+      "oneLiner": "Bitmine上周买入12.7万ETH，价值2.14亿美元",
+      "fact": "🔍 事实还原：Bitmine公司上周购买了126,971枚ETH，价值约2.14亿美元。董事长Tom Lee此前曾呼吁放缓购买，但公司仍进行了这次2026年最大规模买入。",
+      "judgment": "💡 意义判断：此举显示公司对以太坊长期价值的信心，无视短期价格下跌和内部谨慎意见。可能被市场视为抄底信号，影响其他机构决策。",
+      "action": "🧭 行动指引：不构成行动依据。若关注ETH，可观察其他大机构是否跟进买入，以及市场对Bitmine行为的反应。",
+      "titleCn": "Bitmine在以太坊价格暴跌时抄底，完成2026年最大一笔买入",
+      "aiProcessedAt": "2026-06-08T15:03:07.283Z"
     },
     "b5fb280a-8435-45cc-ad44-23dea36748d0": {
       "id": "b5fb280a-8435-45cc-ad44-23dea36748d0",
@@ -2968,7 +3019,10 @@
       "readingTime": "1 分钟",
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📰",
-      "score": 61
+      "score": 61,
+      "aiSummary": "Strategy adds bitcoin and cash after raising $181 million through stock sales.",
+      "titleCn": "Strategy buys 1,550 bitcoin, first time since selling $2.5 million worth of BTC",
+      "aiProcessedAt": "2026-06-08T15:03:14.898Z"
     },
     "454e71be-41e4-4168-aa90-e4705e2c70f7": {
       "id": "454e71be-41e4-4168-aa90-e4705e2c70f7",
@@ -2990,7 +3044,10 @@
       "readingTime": "1 分钟",
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📰",
-      "score": 61
+      "score": 61,
+      "aiSummary": "Meanwhile, Strive bought 32 bitcoin, the same number Strategy dumped last week.",
+      "titleCn": "Live updates: Bitcoin tops $63,000 as Strategy adds $100 million BTC in latest purchase",
+      "aiProcessedAt": "2026-06-08T15:03:15.010Z"
     },
     "b880d9e2-82d9-4cda-bb47-8ec50bace741": {
       "id": "b880d9e2-82d9-4cda-bb47-8ec50bace741",
@@ -3004,7 +3061,11 @@
       "time": "2 小时前",
       "isoDate": "2026-06-08T12:02:21.000Z",
       "category": "crypto",
-      "tags": [],
+      "tags": [
+        "比特币",
+        "市场指标",
+        "已实现公允价值"
+      ],
       "likes": 0,
       "comments": 0,
       "isRead": false,
@@ -3012,7 +3073,14 @@
       "readingTime": "1 分钟",
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📰",
-      "score": 64
+      "score": 64,
+      "aiSummary": "🔍 事实还原：比特币市场指标显示，在近期抛售之后，市场价格接近已实现公允价值。\n\n💡 意义判断：该指标是熊市底部的重要信号，若被确认，可能带动市场情绪回暖，但需结合其他指标验证。\n\n🧭 行动指引：不构成行动依据，但可关注后续价格是否在公允价值附近企稳。",
+      "oneLiner": "比特币指标显示价格接近公允价值，暗示崩盘或已触底",
+      "fact": "🔍 事实还原：比特币市场指标显示，在近期抛售之后，市场价格接近已实现公允价值。",
+      "judgment": "💡 意义判断：该指标是熊市底部的重要信号，若被确认，可能带动市场情绪回暖，但需结合其他指标验证。",
+      "action": "🧭 行动指引：不构成行动依据，但可关注后续价格是否在公允价值附近企稳。",
+      "titleCn": "一个重要比特币市场指标暗示加密货币崩盘最糟糕时期可能已过",
+      "aiProcessedAt": "2026-06-08T15:03:13.609Z"
     },
     "7ae62bf9-a1d3-4473-8a1a-ef460bcc971c": {
       "id": "7ae62bf9-a1d3-4473-8a1a-ef460bcc971c",
@@ -3034,7 +3102,10 @@
       "readingTime": "1 分钟",
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📰",
-      "score": 63
+      "score": 63,
+      "aiSummary": "Retail investors can now buy shares at official underwritten prices through the crypto exchange, bypassing Wall Street’s exclusive pre-IPO clubs.",
+      "titleCn": "Bybit challenges Wall Street with a massive push into tokenized U.S. stock IPOs",
+      "aiProcessedAt": "2026-06-08T15:03:21.829Z"
     },
     "c619d7d3-6da6-48ea-8a62-067d6593e9f4": {
       "id": "c619d7d3-6da6-48ea-8a62-067d6593e9f4",
@@ -3048,7 +3119,11 @@
       "time": "3 小时前",
       "isoDate": "2026-06-08T11:24:06.000Z",
       "category": "crypto",
-      "tags": [],
+      "tags": [
+        "加密货币",
+        "IPO",
+        "市场情绪"
+      ],
       "likes": 0,
       "comments": 0,
       "isRead": false,
@@ -3056,7 +3131,14 @@
       "readingTime": "1 分钟",
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📰",
-      "score": 59
+      "score": 59,
+      "aiSummary": "🔍 事实还原：标题提到加密货币复苏仍难以捉摸，因SpaceX和Anthropic的IPO即将到来。正文仅有预告“6月8日的前瞻”。\n\n💡 意义判断：如果SpaceX和Anthropic成功上市，可能吸引大量投资者资金从高风险加密资产转向传统IPO，短期压制加密市场情绪。但缺乏具体数据支持，需关注后续消息验证。\n\n🧭 行动指引：信息不足，不构成行动依据。可关注6月8日前后的市场资金流向和IPO定价细节。",
+      "oneLiner": "SpaceX和Anthropic的IPO可能分流资金，加密市场复苏承压",
+      "fact": "🔍 事实还原：标题提到加密货币复苏仍难以捉摸，因SpaceX和Anthropic的IPO即将到来。正文仅有预告“6月8日的前瞻”。",
+      "judgment": "💡 意义判断：如果SpaceX和Anthropic成功上市，可能吸引大量投资者资金从高风险加密资产转向传统IPO，短期压制加密市场情绪。但缺乏具体数据支持，需关注后续消息验证。",
+      "action": "🧭 行动指引：信息不足，不构成行动依据。可关注6月8日前后的市场资金流向和IPO定价细节。",
+      "titleCn": "加密货币复苏仍遥不可及，SpaceX和Anthropic即将IPO",
+      "aiProcessedAt": "2026-06-08T15:03:20.190Z"
     },
     "d7f107bc-1d87-4156-9765-97574921448f": {
       "id": "d7f107bc-1d87-4156-9765-97574921448f",
@@ -3078,7 +3160,10 @@
       "readingTime": "1 分钟",
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📰",
-      "score": 63
+      "score": 63,
+      "aiSummary": "Bitcoin is holding above $63,000 after rallying on Sunday. The price is now hovering near a key 200-week moving average that often marks major cycle turning points.",
+      "titleCn": "Bitcoin holds steady after Sunday's rally, though full-fledged reversal may take longer",
+      "aiProcessedAt": "2026-06-08T15:03:22.028Z"
     },
     "9c5476ab-652b-46cd-9069-cbc768c985c1": {
       "id": "9c5476ab-652b-46cd-9069-cbc768c985c1",
@@ -3092,7 +3177,13 @@
       "time": "4 小时前",
       "isoDate": "2026-06-08T09:57:38.000Z",
       "category": "crypto",
-      "tags": [],
+      "tags": [
+        "黄金",
+        "比特币",
+        "200日均线",
+        "美元",
+        "风险资产"
+      ],
       "likes": 0,
       "comments": 0,
       "isRead": false,
@@ -3100,7 +3191,14 @@
       "readingTime": "1 分钟",
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📰",
-      "score": 62
+      "score": 62,
+      "aiSummary": "🔍 黄金价格跌破200日均线，进入熊市区域，同时美元走强、加息预期上升，打压风险资产。\n\n💡 意义：黄金走弱可能促使资金转向比特币等另类资产，但美元强势和加息预期仍对整体风险市场构成压力。市场可能解读为比特币的短期利好信号，需观察后续资金流向。\n\n🧭 不构成直接行动依据。若关注比特币，可观察黄金与比特币的相关性变化及宏观情绪。",
+      "oneLiner": "黄金进入熊市，美元走强施压风险资产，比特币或受益",
+      "fact": "🔍 黄金价格跌破200日均线，进入熊市区域，同时美元走强、加息预期上升，打压风险资产。",
+      "judgment": "💡 意义：黄金走弱可能促使资金转向比特币等另类资产，但美元强势和加息预期仍对整体风险市场构成压力。市场可能解读为比特币的短期利好信号，需观察后续资金流向。",
+      "action": "🧭 不构成直接行动依据。若关注比特币，可观察黄金与比特币的相关性变化及宏观情绪。",
+      "titleCn": "黄金跌破200日均线，为比特币多头带来一线希望",
+      "aiProcessedAt": "2026-06-08T15:03:26.595Z"
     },
     "c14973d1-08a4-4782-8cc8-56534aaa98a0": {
       "id": "c14973d1-08a4-4782-8cc8-56534aaa98a0",
@@ -3422,7 +3520,11 @@
       "time": "52 分钟前",
       "isoDate": "2026-06-08T13:54:45.000Z",
       "category": "crypto",
-      "tags": [],
+      "tags": [
+        "Strive",
+        "比特币增持",
+        "SEC文件"
+      ],
       "likes": 0,
       "comments": 0,
       "isRead": false,
@@ -3430,7 +3532,14 @@
       "readingTime": "7 分钟",
       "coverGradient": "from-[#7c5cfc]/30 to-[#2dd4bf]/15",
       "coverEmoji": "₿",
-      "score": 68
+      "score": 68,
+      "aiSummary": "🔍 事实还原：Strive Inc. 在 2026 年 6 月 2 日至 7 日以均价 63,911 美元购入 32 枚比特币，总支出约 210 万美元，总持仓增至 19,032 BTC。该信息来自提交给 SEC 的 8-K 文件。\n\n💡 意义判断：此次收购成本较此前 74,092 美元均价低约 14%，反映比特币现货价格下跌。Strive 持续加仓表明公司对比特币长期价值有信心，但小规模买入对市场影响有限。\n\n🧭 行动指引：不构成行动依据。关注后续更大规模收购或比特币价格变化，以及公司是否继续增持。",
+      "oneLiner": "Strive 周一披露以约 63,911 美元单价购入 32 枚比特币。",
+      "fact": "🔍 事实还原：Strive Inc. 在 2026 年 6 月 2 日至 7 日以均价 63,911 美元购入 32 枚比特币，总支出约 210 万美元，总持仓增至 19,032 BTC。该信息来自提交给 SEC 的 8-K 文件。",
+      "judgment": "💡 意义判断：此次收购成本较此前 74,092 美元均价低约 14%，反映比特币现货价格下跌。Strive 持续加仓表明公司对比特币长期价值有信心，但小规模买入对市场影响有限。",
+      "action": "🧭 行动指引：不构成行动依据。关注后续更大规模收购或比特币价格变化，以及公司是否继续增持。",
+      "titleCn": "Strive 以均价 63,900 美元购入 32 枚比特币，总持仓达 19,032 BTC",
+      "aiProcessedAt": "2026-06-08T14:57:51.339Z"
     },
     "efbf0f4b-414e-483d-916d-362e1569b904": {
       "id": "efbf0f4b-414e-483d-916d-362e1569b904",
@@ -3452,7 +3561,10 @@
       "readingTime": "8 分钟",
       "coverGradient": "from-[#7c5cfc]/30 to-[#2dd4bf]/15",
       "coverEmoji": "₿",
-      "score": 75
+      "score": 75,
+      "aiSummary": "Bitcoin Magazine\n\nStrategy (MSTR) Restarts Bitcoin Purchases After Selling, Buys 1,550 BTC for $101 Million",
+      "titleCn": "Strategy (MSTR) Restarts Bitcoin Purchases After Selling, Buys 1,550 BTC for $101 Million",
+      "aiProcessedAt": "2026-06-08T15:01:10.970Z"
     },
     "a66fb01a-ff23-43fa-a557-b53fef06da2d": {
       "id": "a66fb01a-ff23-43fa-a557-b53fef06da2d",
@@ -4171,11 +4283,23 @@
       "sourceName": "CoinDesk",
       "entries": 25,
       "newEntries": 0
+    },
+    {
+      "sourceId": "qbitai",
+      "sourceName": "量子位",
+      "entries": 10,
+      "newEntries": 0
+    },
+    {
+      "sourceId": "qbitai",
+      "sourceName": "量子位",
+      "entries": 10,
+      "newEntries": 0
     }
   ],
   "lastFetched": {
     "tmtpost": "2026-06-08T14:39:25.456Z",
-    "qbitai": "2026-06-08T14:39:42.611Z",
+    "qbitai": "2026-06-08T15:02:51.078Z",
     "mit-tech-review": "2026-06-08T14:40:01.332Z",
     "huggingface": "2026-06-08T14:40:23.896Z",
     "anthropic": "2026-06-08T14:40:30.053Z",

@@ -20,8 +20,6 @@ export default function ProfilePage() {
   const [fetchEnabled, setFetchEnabled] = useState(false);
   const [aiEnabled, setAiEnabled] = useState(true);
   const [saved, setSaved] = useState(false);
-  const [reprocessing, setReprocessing] = useState(false);
-  const [reprocessResult, setReprocessResult] = useState("");
 
   useEffect(() => {
     const storedKey = localStorage.getItem(STORAGE_KEY_KEY);
@@ -63,22 +61,6 @@ export default function ProfilePage() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ aiEnabled: next }),
     });
-  };
-
-  const handleReprocess = async () => {
-    if (!apiKey) return;
-    setReprocessing(true);
-    setReprocessResult("");
-    try {
-      const params = new URLSearchParams({ reprocess: "true", key: apiKey, model: apiModel, url: apiUrl });
-      const res = await fetch(`/api/fetch?${params}`);
-      const data = await res.json();
-      setReprocessResult(`已处理 ${data.reprocessed}/${data.total} 条`);
-    } catch (e: any) {
-      setReprocessResult("请求失败: " + e.message);
-    } finally {
-      setReprocessing(false);
-    }
   };
 
   return (
@@ -164,20 +146,13 @@ export default function ProfilePage() {
                 style={{ background: "rgba(255,255,255,0.05)", border: "1px solid var(--border)", color: "rgba(255,255,255,0.85)", outline: "none" }} />
               <p className="text-[10px] mt-1 text-tertiary">兼容 OpenAI 格式的 API 端点</p>
             </div>
-            <div className="flex items-center gap-3">
+            <div>
               <button onClick={saveConfig}
                 className="px-4 py-2 rounded-lg text-xs font-semibold text-white transition-all cursor-pointer"
                 style={{ background: "linear-gradient(135deg, #7c5cfc, #a78bfa)" }}>
                 {saved ? "✅ 已保存" : "保存配置"}
               </button>
-              <button onClick={handleReprocess}
-                disabled={reprocessing || !apiKey}
-                className="px-4 py-2 rounded-lg text-xs font-semibold transition-all cursor-pointer disabled:opacity-40"
-                style={{ background: "rgba(45,212,191,0.12)", color: "#2dd4bf", border: "1px solid rgba(45,212,191,0.15)" }}>
-                {reprocessing ? "⏳ 处理中..." : "🔄 重新解码"}
-              </button>
             </div>
-            {reprocessResult && <p className="text-xs text-dim mt-1">{reprocessResult}</p>}
           </div>
         </div>
       </div>
