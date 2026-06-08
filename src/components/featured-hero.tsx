@@ -36,7 +36,6 @@ export function FeaturedHero({ entry }: { entry: Entry }) {
               <span style={{ color: "#c4b5fd", fontWeight: 500 }}>{entry.source}</span>
               <span>·</span>
               <span>{entry.time}</span>
-              {entry.readingTime && <span style={{ color: "rgba(255,255,255,0.35)" }}>☕ {entry.readingTime}</span>}
             </div>
           </div>
         </div>

@@ -62,7 +62,6 @@ export default function ReadingPage() {
             <span className="text-accent-foreground font-medium">{entry.source}</span>
             <span>·</span>
             <span>{entry.time}</span>
-            {entry.readingTime && <span>· ☕ {entry.readingTime}</span>}
           </div>
 
           <h1 className="text-2xl md:text-3xl font-bold leading-tight tracking-tight mb-5 text-foreground">

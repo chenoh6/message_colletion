@@ -117,7 +117,6 @@ function DecodeDialog({ entry, open, onClose }: { entry: Entry | null; open: boo
               <span style={{ color: getSourceColor(entry.source) }}>{entry.sourceIcon} {entry.source}</span>
               <span>·</span>
               <span>{entry.time}</span>
-              {entry.readingTime && <><span>·</span><span>☕ {entry.readingTime}</span></>}
             </div>
             <button onClick={onClose} className="text-sm" style={{ color: "rgba(255,255,255,0.3)", background: "none", border: "none", font: "inherit", cursor: "pointer" }}>✕</button>
           </div>
