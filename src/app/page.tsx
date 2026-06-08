@@ -95,7 +95,7 @@ function DecodeDialog({ entry, open, onClose }: { entry: Entry | null; open: boo
 
 export default function HomePage() {
   const [market, setMarket] = useState("all");
-  const { entries, loading, total } = useEntries({ limit: 50, pollInterval: 60000, sortBy: "score" });
+  const { entries, loading, total } = useEntries({ limit: 50, pollInterval: 0, sortBy: "score" });
   const { totalEntries } = useFetchStatus();
   const [selectedEntry, setSelectedEntry] = useState<Entry | null>(null);
   const [decodingId, setDecodingId] = useState<string | null>(null);

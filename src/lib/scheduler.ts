@@ -76,9 +76,9 @@ export async function startScheduler() {
   const total = Object.keys(store.entries).length;
   console.log(`[Scheduler] Initial fetch complete. Total entries: ${total}`);
 
-  // 3. Start periodic check (every 30 seconds)
-  intervalHandle = setInterval(tick, 30_000);
-  console.log("[Scheduler] Running (checks every 30s)");
+  // 3. Start periodic check (every 2 minutes, 源自身有 interval 控制采集频率)
+  intervalHandle = setInterval(tick, 120_000);
+  console.log("[Scheduler] Running (checks every 2min)");
 }
 
 export function stopScheduler() {

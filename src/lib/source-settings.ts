@@ -17,10 +17,10 @@ const SETTINGS_PATH = process.cwd() + "/data/source-settings.json";
 let cache: SourceSettings | null = null;
 
 function getDefaultSettings(): SourceSettings {
-  // 默认全部启用硬编码配置的 active 状态
+  // 默认全部关闭，用户手动选择后才采集
   const enabled: Record<string, boolean> = {};
   for (const s of SOURCES) {
-    enabled[s.id] = s.active;
+    enabled[s.id] = false;
   }
   return { enabled };
 }
