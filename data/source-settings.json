@@ -1,12 +1,12 @@
 {
   "enabled": {
-    "jiqizhixin": false,
+    "jiqizhixin": true,
     "qbitai": false,
     "mit-tech-review": false,
     "huggingface": false,
     "anthropic": false,
     "openai": false,
-    "36kr": false,
+    "36kr": true,
     "techcrunch": false,
     "hacker-news": false,
     "ruanyifeng": false,

@@ -19,16 +19,27 @@ const NAV_ITEMS_BOTTOM = [
 
 export function Sidebar() {
   const pathname = usePathname();
+  const [collapsed, setCollapsed] = useState(false);
   const [isDark, setIsDark] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const html = document.documentElement;
-    const stored = localStorage.getItem("theme");
-    if (stored === "light") {
+    setMounted(true);
+    const s = localStorage.getItem("sidebar_collapsed");
+    if (s === "true") setCollapsed(true);
+
+    const t = localStorage.getItem("theme");
+    if (t === "light") {
       setIsDark(false);
-      html.classList.add("light");
+      document.documentElement.classList.add("light");
     }
   }, []);
+
+  const toggle = () => {
+    const next = !collapsed;
+    setCollapsed(next);
+    localStorage.setItem("sidebar_collapsed", String(next));
+  };
 
   const toggleTheme = () => {
     const html = document.documentElement;
@@ -38,20 +49,47 @@ export function Sidebar() {
     localStorage.setItem("theme", next ? "dark" : "light");
   };
 
+  if (!mounted) {
+    return <aside className="hidden md:flex flex-col items-center w-[72px] flex-shrink-0 border-r" style={{ borderColor: "rgba(255,255,255,0.06)" }} />;
+  }
+
   return (
-    <aside className="hidden md:flex flex-col items-center w-[72px] h-screen flex-shrink-0 py-5 border-r z-10"
-      style={{ borderColor: "rgba(255,255,255,0.06)", background: "rgba(8,12,26,0.6)", backdropFilter: "blur(20px)" }}
+    <aside
+      className="hidden md:flex flex-col items-center py-5 border-r z-10 relative transition-all duration-300 flex-shrink-0 overflow-hidden"
+      style={{
+        width: collapsed ? 20 : 72,
+        borderColor: "rgba(255,255,255,0.06)",
+        background: "rgba(8,12,26,0.6)",
+        backdropFilter: "blur(20px)",
+      }}
     >
-      <Link href="/" className="w-10 h-10 rounded-xl flex items-center justify-center text-xl font-extrabold text-white mb-6 transition-transform hover:scale-105"
-        style={{ background: "linear-gradient(135deg, #7c5cfc, #a78bfa)" }}
+      {/* 折叠按钮 — 固定在右上 */}
+      <button
+        onClick={toggle}
+        className="absolute top-3 right-1 w-4 h-4 rounded flex items-center justify-center text-[8px] cursor-pointer z-20 transition-all hover:bg-[rgba(255,255,255,0.06)]"
+        style={{ color: "rgba(255,255,255,0.25)" }}
+        title={collapsed ? "展开" : "折叠"}
+      >
+        {collapsed ? "▶" : "◀"}
+      </button>
+
+      {/* Logo — 折叠时隐藏 */}
+      <Link
+        href="/"
+        className="w-10 h-10 rounded-xl flex items-center justify-center text-xl font-extrabold text-white mb-6 transition-all duration-300 flex-shrink-0 hover:scale-105"
+        style={{
+          background: "linear-gradient(135deg, #7c5cfc, #a78bfa)",
+          opacity: collapsed ? 0 : 1,
+          transform: collapsed ? "scale(0.5)" : "scale(1)",
+        }}
       >
         ✦
       </Link>
 
-      <div className="flex flex-col gap-1 flex-1">
+      {/* 导航 — 折叠时透明 */}
+      <div className="flex flex-col gap-1 flex-1 transition-all duration-300" style={{ opacity: collapsed ? 0 : 1 }}>
         {NAV_ITEMS_TOP.map((item) => {
           const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
-          const isLibrary = item.href === "/library";
           return (
             <Link
               key={item.href}
@@ -65,19 +103,13 @@ export function Sidebar() {
               title={item.label}
             >
               {item.icon}
-              {isLibrary && (
-                <span className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-red-500 text-white text-[8px] font-bold flex items-center justify-center border-2"
-                  style={{ borderColor: "#080c1a" }}
-                >
-                  3
-                </span>
-              )}
             </Link>
           );
         })}
       </div>
 
-      <div className="flex flex-col gap-1">
+      {/* 底部 — 折叠时透明 */}
+      <div className="flex flex-col gap-1 items-center transition-all duration-300" style={{ opacity: collapsed ? 0 : 1 }}>
         {NAV_ITEMS_BOTTOM.map((item) => {
           const isActive = pathname.startsWith(item.href);
           return (
@@ -96,14 +128,14 @@ export function Sidebar() {
             </Link>
           );
         })}
-        <div className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold mt-2 cursor-pointer transition-all mx-auto"
+        <div className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold mt-2 cursor-pointer transition-all"
           style={{ background: "linear-gradient(135deg, #7c5cfc, #2dd4bf)", border: "2px solid rgba(255,255,255,0.06)" }}
           title="用户"
         >
           G
         </div>
         <button onClick={toggleTheme}
-          className="w-9 h-9 rounded-xl flex items-center justify-center text-sm mt-1 transition-all cursor-pointer mx-auto"
+          className="w-9 h-9 rounded-xl flex items-center justify-center text-sm mt-1 transition-all cursor-pointer"
           style={{ background: "rgba(255,255,255,0.04)", color: "rgba(255,255,255,0.3)" }}
           title={isDark ? "浅色模式" : "深色模式"}
         >
