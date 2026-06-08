@@ -3,50 +3,6 @@
 import type { Entry } from "@/lib/types";
 import { getSourceColor } from "@/lib/crypto-data";
 
-/* ===== 按时间分组 ===== */
-function groupByTimeBucket(entries: Entry[]): { label: string; entries: Entry[] }[] {
-  const groups: { label: string; entries: Entry[] }[] = [];
-
-  const getBucket = (timeStr: string): number => {
-    const match = timeStr.match(/(\d+)\s*(分钟|小时|天|刚刚)/);
-    if (!match) return 999;
-    const n = parseInt(match[1]);
-    const unit = match[2];
-    if (unit === "刚刚" || timeStr.includes("刚刚")) return 0;
-    if (unit === "分钟") return n;
-    if (unit === "小时") return n * 60;
-    if (unit === "天") return n * 1440;
-    return 999;
-  };
-
-  const sorted = [...entries].sort((a, b) => getBucket(a.time) - getBucket(b.time));
-
-  let currentLabel = "";
-  let currentEntries: Entry[] = [];
-
-  for (const entry of sorted) {
-    const mins = getBucket(entry.time);
-    let label = "";
-    if (mins <= 5) label = "刚刚";
-    else if (mins <= 60) label = `${mins} 分钟前`;
-    else if (mins <= 180) label = `${Math.floor(mins / 60)} 小时前`;
-    else if (mins <= 720) label = "今天";
-    else label = "更早";
-
-    if (label !== currentLabel && currentEntries.length > 0) {
-      groups.push({ label: currentLabel, entries: currentEntries });
-      currentEntries = [];
-    }
-    currentLabel = label;
-    currentEntries.push(entry);
-  }
-  if (currentEntries.length > 0) {
-    groups.push({ label: currentLabel, entries: currentEntries });
-  }
-
-  return groups;
-}
-
 /* ===== 单条时间轴卡片 ===== */
 function TimelineEvent({ entry, index, onOpen, onDecode, decoding }: {
   entry: Entry;
@@ -58,7 +14,7 @@ function TimelineEvent({ entry, index, onOpen, onDecode, decoding }: {
   const hasAi = !!entry.aiSummary;
   const sourceColor = getSourceColor(entry.source);
 
-  // 评分标记：≥80 热门，≥60 值得关注
+  // 评分标记
   const score = entry.score ?? 0;
   const isHot = score >= 80;
   const isNotable = score >= 60;
@@ -66,7 +22,7 @@ function TimelineEvent({ entry, index, onOpen, onDecode, decoding }: {
 
   return (
     <div className="flex gap-4 animate-in" style={{ animationDelay: `${0.03 * index}s` }}>
-      {/* 时间轴左侧 — 评分高亮条 */}
+      {/* 左侧 — 评分高亮条 */}
       <div className="flex flex-col items-center flex-shrink-0" style={{ width: 20 }}>
         <div
           className="w-[10px] h-[10px] rounded-full mt-1.5 z-10 transition-all"
@@ -125,24 +81,12 @@ export function TimelineView({ entries, onOpen, onDecode, decodingId }: {
   onDecode: (e: Entry) => void;
   decodingId: string | null;
 }) {
-  const groups = groupByTimeBucket(entries);
-
-  if (groups.length === 0) return null;
+  if (entries.length === 0) return null;
 
   return (
     <div className="flex flex-col gap-1">
-      {groups.map((group) => (
-        <div key={group.label}>
-          <div className="flex items-center gap-3 mb-2 mt-2 first:mt-0">
-            <div className="text-[11px] font-semibold shrink-0" style={{ color: "rgba(255,255,255,0.4)" }}>
-              {group.label}
-            </div>
-            <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.04)" }} />
-          </div>
-          {group.entries.map((entry, i) => (
-            <TimelineEvent key={entry.id} entry={entry} index={i} onOpen={onOpen} onDecode={onDecode} decoding={decodingId === entry.id} />
-          ))}
-        </div>
+      {entries.map((entry, i) => (
+        <TimelineEvent key={entry.id} entry={entry} index={i} onOpen={onOpen} onDecode={onDecode} decoding={decodingId === entry.id} />
       ))}
     </div>
   );
