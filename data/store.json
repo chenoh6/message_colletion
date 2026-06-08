@@ -1342,28 +1342,6 @@
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "💬"
     },
-    "55eb2fd9-10f7-4ea4-bf54-20d8e50e351b": {
-      "id": "55eb2fd9-10f7-4ea4-bf54-20d8e50e351b",
-      "title": "Meta enables ADB on deprecated Portal devices [video]",
-      "url": "https://fb.watch/HxPu0fSyeH/",
-      "summary": "Comments",
-      "content": "<a href=\"https://news.ycombinator.com/item?id=48406640\">Comments</a>",
-      "contentText": "Comments",
-      "source": "Hacker News",
-      "sourceId": "hacker-news",
-      "sourceIcon": "💬",
-      "time": "15 小时前",
-      "isoDate": "2026-06-05T00:44:38.000Z",
-      "category": "tech",
-      "tags": [],
-      "likes": 0,
-      "comments": 0,
-      "isRead": false,
-      "isSaved": false,
-      "readingTime": "1 分钟",
-      "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
-      "coverEmoji": "💬"
-    },
     "6b35ef4f-a994-402d-af18-62c0987e5f4c": {
       "id": "6b35ef4f-a994-402d-af18-62c0987e5f4c",
       "title": "Azure Linux 4.0 is Microsoft's first general-purpose Linux",
@@ -11429,23 +11407,31 @@
       "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
       "coverEmoji": "📰",
       "score": 57
+    },
+    "419ddcfb-70a6-4ac7-b421-c2b9fbe5cf4a": {
+      "id": "419ddcfb-70a6-4ac7-b421-c2b9fbe5cf4a",
+      "title": "Bitmine bought the dip, making its biggest ether purchase in 2026 as prices tanked",
+      "url": "https://www.coindesk.com/markets/2026/06/07/bitmine-bought-the-dip-making-its-biggest-ether-purchase-in-2026-as-prices-tanked",
+      "summary": "The company bought 126,971 ETH last week, worth roughly $214 million at current prices, despite chairman Tom Lee's earlier calls to slow purchases.",
+      "contentText": "The company bought 126,971 ETH last week, worth roughly $214 million at current prices, despite chairman Tom Lee's earlier calls to slow purchases.",
+      "source": "CoinDesk",
+      "sourceId": "coindesk",
+      "sourceIcon": "📰",
+      "time": "2 分钟前",
+      "isoDate": "2026-06-08T12:53:30.000Z",
+      "category": "crypto",
+      "tags": [],
+      "likes": 0,
+      "comments": 0,
+      "isRead": false,
+      "isSaved": false,
+      "readingTime": "1 分钟",
+      "coverGradient": "from-[#f472b6]/20 to-[#7c5cfc]/10",
+      "coverEmoji": "📰",
+      "score": 67
     }
   },
   "fetchLogs": [
-    {
-      "sourceId": "cls-cn",
-      "sourceName": "华尔街见闻",
-      "entries": 0,
-      "newEntries": 0,
-      "error": "Unexpected close tag\nLine: 0\nColumn: 1651\nChar: >"
-    },
-    {
-      "sourceId": "eastmoney",
-      "sourceName": "东方财富",
-      "entries": 0,
-      "newEntries": 0,
-      "error": "Status code 404"
-    },
     {
       "sourceId": "jiqizhixin",
       "sourceName": "机器之心",
@@ -11751,6 +11737,18 @@
       "sourceName": "Cointelegraph",
       "entries": 30,
       "newEntries": 30
+    },
+    {
+      "sourceId": "coindesk",
+      "sourceName": "CoinDesk",
+      "entries": 25,
+      "newEntries": 25
+    },
+    {
+      "sourceId": "cointelegraph",
+      "sourceName": "Cointelegraph",
+      "entries": 30,
+      "newEntries": 30
     }
   ],
   "lastFetched": {
@@ -11776,8 +11774,8 @@
     "one-useful-thing": "2026-06-07T14:32:55.587Z",
     "latent-space": "2026-06-07T14:33:10.725Z",
     "smol-ai": "2026-06-07T14:33:25.847Z",
-    "coindesk": "2026-06-08T12:25:12.202Z",
-    "cointelegraph": "2026-06-08T12:25:11.972Z",
+    "coindesk": "2026-06-08T12:56:17.864Z",
+    "cointelegraph": "2026-06-08T12:56:19.646Z",
     "theblock": "2026-06-07T14:29:30.049Z",
     "decrypt": "2026-06-07T14:33:33.151Z",
     "bitcoinmagazine": "2026-06-07T14:33:35.284Z",

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { TopBar } from "@/components/topbar";
 import { TrendPanel } from "@/components/trend-panel";
 import { TimelineView } from "@/components/timeline-view";
+import { CardView } from "@/components/card-view";
 import { useEntries, useFetchStatus } from "@/lib/use-data";
 import { TRENDS } from "@/lib/data";
 import { CATEGORIES } from "@/lib/sources";
@@ -117,8 +118,11 @@ function DecodeDialog({ entry, open, onClose }: { entry: Entry | null; open: boo
   );
 }
 
+type ViewMode = "timeline" | "cards";
+
 export default function HomePage() {
   const [topic, setTopic] = useState("all");
+  const [viewMode, setViewMode] = useState<ViewMode>("timeline");
   const { entries, loading, total } = useEntries({ limit: 50, pollInterval: 0, sortBy: "score" });
   const { totalEntries } = useFetchStatus();
   const [selectedEntry, setSelectedEntry] = useState<Entry | null>(null);
@@ -150,8 +154,35 @@ export default function HomePage() {
     <>
       <TopBar />
       <div className="flex-1 overflow-y-auto scrollbar-thin px-8 py-6 pb-8 container-page">
-        <div className="mb-4">
+        <div className="mb-3 flex items-center gap-3">
           <TopicRow active={topic} counts={topicCounts} onSelect={setTopic} />
+          {/* 视图切换 */}
+          <div className="flex gap-0.5 p-0.5 rounded-lg border flex-shrink-0 ml-auto"
+            style={{ background: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.06)" }}
+          >
+            <button
+              onClick={() => setViewMode("timeline")}
+              className="px-2.5 py-1 rounded-md text-xs font-medium transition-all cursor-pointer"
+              style={{
+                background: viewMode === "timeline" ? "rgba(124,92,252,0.15)" : "transparent",
+                color: viewMode === "timeline" ? "#c4b5fd" : "rgba(255,255,255,0.3)",
+              }}
+              title="时间轴模式"
+            >
+              ⏱ 时间轴
+            </button>
+            <button
+              onClick={() => setViewMode("cards")}
+              className="px-2.5 py-1 rounded-md text-xs font-medium transition-all cursor-pointer"
+              style={{
+                background: viewMode === "cards" ? "rgba(124,92,252,0.15)" : "transparent",
+                color: viewMode === "cards" ? "#c4b5fd" : "rgba(255,255,255,0.3)",
+              }}
+              title="信息源卡片模式"
+            >
+              📰 卡片
+            </button>
+          </div>
         </div>
 
         {loading && (
@@ -165,9 +196,13 @@ export default function HomePage() {
 
         {!loading && (
           <div className="grid grid-cols-1 xl:grid-cols-[1fr_300px] gap-5">
-            <div className="flex flex-col gap-2.5">
+            <div className="flex flex-col gap-2.5 min-w-0">
               {filtered.length > 0 ? (
-                <TimelineView entries={filtered} onOpen={setSelectedEntry} onDecode={handleDecode} decodingId={decodingId} />
+                viewMode === "timeline" ? (
+                  <TimelineView entries={filtered} onOpen={setSelectedEntry} onDecode={handleDecode} decodingId={decodingId} />
+                ) : (
+                  <CardView entries={filtered} onOpen={setSelectedEntry} />
+                )
               ) : (
                 <div className="glass-card rounded-2xl p-8 text-center">
                   <p className="text-sm text-dim">
